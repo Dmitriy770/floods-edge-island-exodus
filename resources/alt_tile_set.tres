@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=6 format=3 uid="uid://druc74hdoa3k1"]
 
 [ext_resource type="Texture2D" uid="uid://cu1rnjixfrywe" path="res://assets/forest.png" id="1_yu3jc"]
-[ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/test_island/test_island.tscn" id="2_ftytt"]
+[ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/islands/test_island/island.tscn" id="2_ftytt"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sb5ac"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

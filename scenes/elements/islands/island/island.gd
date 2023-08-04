@@ -1,4 +1,4 @@
-class_name TestIsland
+class_name Island
 extends Area2D
 
 signal island_clicked(TestIsland)
@@ -10,7 +10,7 @@ func _ready() -> void:
 	tile_map.hide()
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event.is_action_pressed("set_point"):
+	if event.is_action_pressed("action"):
 		island_clicked.emit(self)
 
 func get_all_tiles() -> Array[TileInfo]:

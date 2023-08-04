@@ -17,8 +17,8 @@ script = ExtResource("1_kik0p")
 debug_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
 texture = SubResource("AtlasTexture_bhnst")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_0ew16")

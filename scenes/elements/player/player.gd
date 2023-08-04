@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	velocity = direction * speed * delta
 	move_and_slide()
 
-func move_to_island(island: TestIsland) -> void:
+func move_to_island(island: Island) -> void:
 	navigation_agent.target_position = island.target_position.global_position
 	if not navigation_agent.is_target_reachable():
 		navigation_agent.target_position = global_position
