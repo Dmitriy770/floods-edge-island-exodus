@@ -1,5 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bom7mm0201y1o"]
 
+[ext_resource type="Script" path="res://scenes/scenes/main_menu/main_menu.gd" id="1_5yhfl"]
 [ext_resource type="Texture2D" uid="uid://ba488clp4hmej" path="res://assets/background.jpg" id="1_ya13e"]
 [ext_resource type="StyleBox" uid="uid://b4ca5ocs6ge0e" path="res://styles/main_menu.stylebox" id="2_f7fke"]
 [ext_resource type="Texture2D" uid="uid://kj4syn8cdtx0" path="res://assets/RandomRectangle_4x3.png" id="2_thg70"]
@@ -10,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://c1cv4q1k6pgqk" path="res://assets/Exit.png" id="6_7537y"]
 [ext_resource type="Texture2D" uid="uid://dy276rgljpxcc" path="res://assets/ExitPressed.png" id="8_g2flx"]
 [ext_resource type="Texture2D" uid="uid://8j6gucpraby8" path="res://assets/ExitGray.png" id="9_8tdfe"]
-[ext_resource type="Script" path="res://scenes/scenes/main_menu/ExitButton.gd" id="9_pag1e"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5yhfl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
@@ -102,7 +103,6 @@ texture_normal = ExtResource("6_7537y")
 texture_pressed = ExtResource("8_g2flx")
 texture_hover = ExtResource("9_8tdfe")
 stretch_mode = 5
-script = ExtResource("9_pag1e")
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
 visible = false
@@ -130,4 +130,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="MarginContainer/VBoxContainer/ExitButton" method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
