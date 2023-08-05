@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv21dagw8l67i"]
+
+[ext_resource type="Texture2D" uid="uid://cu1rnjixfrywe" path="res://assets/forest.png" id="1_fskfp"]
+[ext_resource type="Texture2D" uid="uid://dnhlapg867wmt" path="res://assets/cursor.png" id="1_ggcyl"]
+[ext_resource type="Script" path="res://scenes/levels/level_1/hud/hud.gd" id="1_s5ivw"]
+[ext_resource type="ButtonGroup" uid="uid://r4hkhpy1i1ud" path="res://scenes/levels/level_1/hud/hud_button_group.tres" id="2_dbh43"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfvus"]
+atlas = ExtResource("1_fskfp")
+region = Rect2(23, 88, 34, 38)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_s5ivw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Cursor" type="Button" parent="Control/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_dbh43")
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/Cursor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/Cursor/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_ggcyl")
+
+[node name="Block" type="Button" parent="Control/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("2_dbh43")
+flat = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/Block"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/Block/MarginContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_hfvus")
+
+[connection signal="toggled" from="Control/MarginContainer/HBoxContainer/Cursor" to="." method="_on_cursor_toggled"]
+[connection signal="toggled" from="Control/MarginContainer/HBoxContainer/Block" to="." method="_on_block_toggled"]

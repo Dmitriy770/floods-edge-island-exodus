@@ -1,17 +1,19 @@
 class_name Level1
 extends Node2D
 
+var tile_counter := 15
+var is_action_press := false
+var active_tool := HUD.Tools.CURSOR
+
 @onready var tile_map := $TileMap as TileMap
-@onready var islands := $Islands as Node
+@onready var islands_container := $Islands as Node
 @onready var player := $Player as Player
 @onready var tile_counter_label := $Label as Label
-
-var tile_counter := 15
 
 func _ready() -> void:
 	update_tile_counter(tile_counter)
 	
-	for island in islands.get_children() as Array[Island]:
+	for island in islands_container.get_children() as Array[Island]:
 		island.island_clicked.connect(on_island_clicked)
 		add_tiles_from_island(island)
 
@@ -19,8 +21,14 @@ func update_tile_counter(amount: int) -> void:
 	tile_counter_label.text = str(amount)
 	tile_counter = amount
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("action"):
+		is_action_press = true
+	if event.is_action_released("action"):
+		is_action_press = false
+
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_pressed("action"):
+	if is_action_press and active_tool == HUD.Tools.BLOCK:
 		draw_ground()
 
 func draw_ground() -> void:
@@ -43,10 +51,22 @@ func draw_ground() -> void:
 
 func add_tiles_from_island(island: Island) -> void:
 	var tiles := island.get_all_tiles()
-	island.delete_tile_map()
+	island.clear_tile_map()
 	for tile in tiles:
 		var coords := tile_map.local_to_map(island.global_position + tile.cords)
 		tile_map.set_cell(tile.layer, coords, tile.source_id, tile.atlas_coords)
 		
 func on_island_clicked(island: Island) -> void:
-	player.move_to_island(island)
+	if active_tool == HUD.Tools.CURSOR:
+		player.move_to_island(island)
+
+
+func _on_hud_tool_changed(tool: HUD.Tools) -> void:
+	active_tool = tool
+	match tool:
+		HUD.Tools.CURSOR:
+			for island in islands_container.get_children() as Array[Island]:
+				island.enable_click()
+		HUD.Tools.BLOCK:
+			for island in islands_container.get_children() as Array[Island]:
+				island.disable_click()
