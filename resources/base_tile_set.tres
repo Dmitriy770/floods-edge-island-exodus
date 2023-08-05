@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cu1rnjixfrywe" path="res://assets/forest.png" id="1_087o7"]
 [ext_resource type="Texture2D" uid="uid://dwe1uoquuw5ym" path="res://assets/white.png" id="2_nxp01"]
+[ext_resource type="Texture2D" uid="uid://b2cyu26qt8vfx" path="res://assets/forest_ [resources].png" id="2_q5quv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_t11xg"]
 vertices = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -386,6 +387,41 @@ texture = ExtResource("1_087o7")
 texture = ExtResource("2_nxp01")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tmpsm"]
+texture = ExtResource("2_q5quv")
+1:1/size_in_atlas = Vector2i(1, 2)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 8)
+6:1/size_in_atlas = Vector2i(1, 2)
+6:1/0 = 0
+6:1/0/texture_origin = Vector2i(0, 8)
+3:7/size_in_atlas = Vector2i(1, 2)
+3:7/0 = 0
+3:7/0/texture_origin = Vector2i(0, 5)
+4:7/size_in_atlas = Vector2i(1, 2)
+4:7/0 = 0
+4:7/0/texture_origin = Vector2i(0, 5)
+7:7/size_in_atlas = Vector2i(1, 2)
+7:7/animation_columns = 4
+7:7/animation_frame_0/duration = 0.4
+7:7/animation_frame_1/duration = 0.4
+7:7/animation_frame_2/duration = 0.4
+7:7/animation_frame_3/duration = 0.4
+7:7/0 = 0
+7:7/0/texture_origin = Vector2i(0, 8)
+2:7/size_in_atlas = Vector2i(1, 2)
+2:7/0 = 0
+2:7/0/texture_origin = Vector2i(0, 5)
+7:1/0 = 0
+9:1/0 = 0
+1:4/0 = 0
+1:6/0 = 0
+4:4/0 = 0
+4:3/0 = 0
+2:3/size_in_atlas = Vector2i(2, 2)
+2:3/0 = 0
+5:4/0 = 0
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Water(background)"
@@ -396,4 +432,8 @@ navigation_layer_0/layers = 1
 custom_data_layer_0/name = "is_can_build"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_vg4r2")
+<<<<<<< HEAD
 sources/1 = SubResource("TileSetAtlasSource_cp06j")
+=======
+sources/1 = SubResource("TileSetAtlasSource_tmpsm")
+>>>>>>> island-development
