@@ -19,7 +19,7 @@ func update_tile_counter(amount: int) -> void:
 	tile_counter_label.text = str(amount)
 	tile_counter = amount
 
-func _process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("action"):
 		draw_ground()
 
@@ -27,7 +27,7 @@ func draw_ground() -> void:
 	var tile_pos := tile_map.local_to_map(get_global_mouse_position())
 	
 	var layer := 1
-	var coords: Array[Vector2i]
+	var coords: Array[Vector2i] = []
 	for x in range(-1, 2):
 		for y in range(-1, 2):
 			coords.append(Vector2i(tile_pos.x + x, tile_pos.y + y))
@@ -42,9 +42,11 @@ func draw_ground() -> void:
 		update_tile_counter(tile_counter - 1)
 
 func add_tiles_from_island(island: Island) -> void:
-	for tile in island.get_all_tiles() as Array[TileInfo]:
+	var tiles := island.get_all_tiles()
+	island.delete_tile_map()
+	for tile in tiles:
 		var coords := tile_map.local_to_map(island.global_position + tile.cords)
-		tile_map.set_cell(1, coords, tile.source_id, tile.atlas_coords)
+		tile_map.set_cell(tile.layer, coords, tile.source_id, tile.atlas_coords)
 		
 func on_island_clicked(island: Island) -> void:
 	player.move_to_island(island)
