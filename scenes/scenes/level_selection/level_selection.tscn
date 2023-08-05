@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://df05g1iunley3"]
 
-[ext_resource type="TileSet" uid="uid://tb58dw7g58g4" path="res://resources/base_tile_set.tres" id="1_ev10o"]
+[ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ev10o"]
 [ext_resource type="Texture2D" uid="uid://c7mup2dsxhpue" path="res://assets/flag_marker.png" id="2_66b7f"]
 
 [node name="level_selection" type="Node2D"]
@@ -23,8 +23,10 @@ layer_1/tile_data = PackedInt32Array(1114230, 131072, 6, 1114231, 131072, 6, 117
 position = Vector2(140, 802)
 
 [node name="Button" type="Button" parent="Node2D"]
-offset_right = 131.0
-offset_bottom = 131.0
+offset_left = -52.0
+offset_top = -82.0
+offset_right = 425.0
+offset_bottom = 285.0
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
