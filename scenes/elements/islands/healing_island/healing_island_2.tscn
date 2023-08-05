@@ -176,9 +176,6 @@ polygon = PackedVector2Array(-32, 8, -16, 8, -16, -24, 48, -24, 48, -8, 96, -8, 
 [node name="TargetPosition" parent="." index="2"]
 position = Vector2(104, 104)
 
-[node name="LandingAnimation" type="Node2D" parent="." index="4"]
-y_sort_enabled = true
-
 [node name="Sprite2D" type="Sprite2D" parent="LandingAnimation" index="0"]
 position = Vector2(72, 134)
 scale = Vector2(0.75, 0.75)
@@ -208,7 +205,10 @@ flip_h = true
 region_enabled = true
 region_rect = Rect2(8, 168, 16, 24)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LandingAnimation" index="4"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="LandingAnimation" index="4"]
 libraries = {
 "": SubResource("AnimationLibrary_g2cdx")
 }
+
+[node name="LandingAnimation2" type="Node2D" parent="." index="4"]
+y_sort_enabled = true

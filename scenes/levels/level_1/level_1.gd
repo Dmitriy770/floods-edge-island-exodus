@@ -6,7 +6,7 @@ const FOOD_PER_SECOND := 0.05
 @export var final_island: Island = null
 
 var tile_amount := 15
-var food_amount := 20
+var food_amount := 20.0
 var is_action_press := false
 var active_tool := HUD.Tools.CURSOR
 

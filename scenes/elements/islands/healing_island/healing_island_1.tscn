@@ -220,9 +220,6 @@ layer_3/tile_data = PackedInt32Array(262144, 2, 0, 327680, 2, 0, 393216, 2, 0, 3
 [node name="CollisionPolygon2D" parent="." index="1"]
 polygon = PackedVector2Array(8, 56, 8, 24, 24, 24, 24, -8, 88, -8, 88, 8, 120, 8, 120, 24, 152, 24, 152, 40, 168, 40, 168, 88, 152, 88, 152, 120, 120, 120, 120, 136, 104, 136, 104, 152, 56, 152, 56, 136, 24, 136, 24, 120, 8, 120, 8, 104, -8, 104, -8, 56)
 
-[node name="LandingAnimation" type="Node2D" parent="." index="4"]
-y_sort_enabled = true
-
 [node name="Sprite2D" type="Sprite2D" parent="LandingAnimation" index="0"]
 y_sort_enabled = true
 position = Vector2(90, 136)
@@ -258,7 +255,10 @@ texture = ExtResource("2_2ysqu")
 region_enabled = true
 region_rect = Rect2(8, 40, 16, 24)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LandingAnimation" index="4"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="LandingAnimation" index="4"]
 libraries = {
 "": SubResource("AnimationLibrary_5d1wd")
 }
+
+[node name="LandingAnimation2" type="Node2D" parent="." index="4"]
+y_sort_enabled = true
