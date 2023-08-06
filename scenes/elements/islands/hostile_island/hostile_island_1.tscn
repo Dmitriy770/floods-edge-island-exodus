@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddqb634ftp0p6"]
+[gd_scene load_steps=7 format=3 uid="uid://ddqb634ftp0p6"]
 
 [ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/islands/island/island.tscn" id="1_06et8"]
 [ext_resource type="Texture2D" uid="uid://b18oso8vfjxjo" path="res://assets/mPlayer_ [human].png" id="2_13rmu"]
+[ext_resource type="AnimationLibrary" uid="uid://j6l6pt0tokwo" path="res://resources/animations/landing_animation/hostile1_landing_animation.res" id="3_flno3"]
 
 [sub_resource type="Animation" id="Animation_yjx3u"]
 length = 0.001
@@ -173,18 +174,18 @@ polygon = PackedVector2Array(-8, 24, 8, 24, 8, 8, 24, 8, 24, -8, 88, -8, 88, 8, 
 
 [node name="Sprite2D" type="Sprite2D" parent="LandingAnimation" index="0"]
 y_sort_enabled = true
-position = Vector2(19, 58)
+position = Vector2(51, 129)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_13rmu")
+flip_h = true
 region_enabled = true
 region_rect = Rect2(8, 40, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="LandingAnimation" index="1"]
 y_sort_enabled = true
-position = Vector2(78, 77)
+position = Vector2(61, 128)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_13rmu")
-flip_h = true
 region_enabled = true
 region_rect = Rect2(8, 40, 16, 24)
 
@@ -199,7 +200,7 @@ region_rect = Rect2(8, 40, 16, 24)
 
 [node name="Sprite2D4" type="Sprite2D" parent="LandingAnimation" index="3"]
 y_sort_enabled = true
-position = Vector2(130, 92)
+position = Vector2(64, 137)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_13rmu")
 region_enabled = true
@@ -209,4 +210,9 @@ region_rect = Rect2(8, 40, 16, 24)
 root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_6fuq7")
+}
+
+[node name="AnimationPlayer" parent="LandingAnimation" index="5"]
+libraries = {
+"": ExtResource("3_flno3")
 }

@@ -43,6 +43,7 @@ polygon = PackedVector2Array(-16, 16, -16, 96, 0, 96, 0, 112, 16, 112, 16, 128, 
 position = Vector2(71, 72)
 
 [node name="LandingAnimation" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="LandingAnimation"]
 
