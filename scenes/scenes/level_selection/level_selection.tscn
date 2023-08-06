@@ -200,6 +200,7 @@ size_flags_vertical = 0
 texture_normal = ExtResource("6_k7833")
 texture_pressed = ExtResource("7_cmkao")
 texture_hover = ExtResource("8_7bihp")
+texture_disabled = ExtResource("8_7bihp")
 stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
