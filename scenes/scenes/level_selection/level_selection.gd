@@ -69,9 +69,11 @@ func _on_reset_button_pressed():
 
 func _on_exit_dialog_button_pressed():
 	dialog_window_animation.play_backwards('window_appear')
+	await dialog_window_animation.animation_finished
 	dialog_window.hide()
 
 func _on_confirm_button_pressed():
 	LevelsStorage.reset_all_levels_data()
 	dialog_window_animation.play_backwards('window_appear')
+	await dialog_window_animation.animation_finished
 	dialog_window.hide()

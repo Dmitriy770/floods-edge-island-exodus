@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://df05g1iunley3"]
+[gd_scene load_steps=25 format=3 uid="uid://df05g1iunley3"]
 
 [ext_resource type="Script" path="res://scenes/scenes/level_selection/level_selection.gd" id="1_c0oc6"]
 [ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ev10o"]
@@ -7,12 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://dfoh0glkb4442" path="res://assets/Start.png" id="6_k7833"]
 [ext_resource type="PackedScene" uid="uid://b0yprcjs8ucd1" path="res://scenes/scenes/level_selection/menu_items/menu_item_1/menu_item_1.tscn" id="7_0bo7m"]
 [ext_resource type="Texture2D" uid="uid://cd7oyr7ceftla" path="res://assets/StartPressed.png" id="7_cmkao"]
-[ext_resource type="Texture2D" uid="uid://n0vxubelma0o" path="res://assets/SimpleButton_Small.png" id="7_otsct"]
+[ext_resource type="Texture2D" uid="uid://cpcd1fppgprnh" path="res://assets/Reset.png" id="7_ypxhe"]
 [ext_resource type="Texture2D" uid="uid://dd84c6t6ssbyx" path="res://assets/StartGray.png" id="8_7bihp"]
 [ext_resource type="PackedScene" uid="uid://x36addprq4kx" path="res://scenes/scenes/level_selection/menu_items/menu_item_2/menu_item_2.tscn" id="8_08rhc"]
 [ext_resource type="Texture2D" uid="uid://c1cv4q1k6pgqk" path="res://assets/Exit.png" id="8_btfo0"]
+[ext_resource type="Texture2D" uid="uid://fu3fi0xhyuw5" path="res://assets/Menu.png" id="8_mpkm2"]
+[ext_resource type="Texture2D" uid="uid://dd8d47ckmdyjn" path="res://assets/ResetPassed.png" id="8_vtmxc"]
 [ext_resource type="Texture2D" uid="uid://dy276rgljpxcc" path="res://assets/ExitPressed.png" id="9_peuqt"]
 [ext_resource type="PackedScene" uid="uid://cp5y73x1ct201" path="res://scenes/scenes/level_selection/menu_items/menu_item_3/menu_item_3.tscn" id="9_sfhcx"]
+[ext_resource type="Texture2D" uid="uid://dgnf6k8m6kdy6" path="res://assets/MenuPressed.png" id="9_vajeo"]
+[ext_resource type="Texture2D" uid="uid://detg1cw56wxtx" path="res://assets/ResetGray.png" id="9_wxu5x"]
+[ext_resource type="Texture2D" uid="uid://b6s25ane3dgr8" path="res://assets/MenuGray.png" id="10_bu4o0"]
 [ext_resource type="Texture2D" uid="uid://8j6gucpraby8" path="res://assets/ExitGray.png" id="10_cy7no"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_gqd1t"]
@@ -286,17 +291,19 @@ custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("7_otsct")
+texture_normal = ExtResource("7_ypxhe")
+texture_pressed = ExtResource("8_vtmxc")
+texture_hover = ExtResource("9_wxu5x")
 stretch_mode = 5
 
-[node name="ExitButton" type="TextureButton" parent="MarginContainer2/ColorRect/HBoxContainer"]
+[node name="MenuButton" type="TextureButton" parent="MarginContainer2/ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("8_btfo0")
-texture_pressed = ExtResource("9_peuqt")
-texture_hover = ExtResource("10_cy7no")
+texture_normal = ExtResource("8_mpkm2")
+texture_pressed = ExtResource("9_vajeo")
+texture_hover = ExtResource("10_bu4o0")
 stretch_mode = 5
 
 [node name="MenuItems" type="Node2D" parent="."]
@@ -390,9 +397,9 @@ custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("6_k7833")
-texture_pressed = ExtResource("7_cmkao")
-texture_hover = ExtResource("8_7bihp")
+texture_normal = ExtResource("7_ypxhe")
+texture_pressed = ExtResource("8_vtmxc")
+texture_hover = ExtResource("9_wxu5x")
 stretch_mode = 5
 
 [node name="DialogWindowAnimation" type="AnimationPlayer" parent="DialogWindow"]
@@ -403,6 +410,6 @@ libraries = {
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/ColorRect/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="MarginContainer2/ColorRect/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/ColorRect/HBoxContainer/MenuButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ExitDialogButton" to="." method="_on_exit_dialog_button_pressed"]
 [connection signal="pressed" from="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
