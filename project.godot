@@ -14,6 +14,10 @@ config/name="Flood's Edge: Island Exodus"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ExitAnimation="*res://scenes/animations/exit_animation/exit_animation.tscn"
+
 [display]
 
 window/size/viewport_width=1920
@@ -23,6 +27,10 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="Flood-s Edge- Island Exodus"
+
+[gui]
+
+theme/custom_font="res://assets/font/Sta.Toasty_font.ttf"
 
 [input]
 

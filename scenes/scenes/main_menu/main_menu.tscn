@@ -1,3 +1,134 @@
-[gd_scene format=3 uid="uid://iqecwbqvf328"]
+[gd_scene load_steps=12 format=3 uid="uid://bom7mm0201y1o"]
 
-[node name="MainMenu" type="Node2D"]
+[ext_resource type="Script" path="res://scenes/scenes/main_menu/main_menu.gd" id="1_5yhfl"]
+[ext_resource type="Texture2D" uid="uid://ba488clp4hmej" path="res://assets/background.jpg" id="1_ya13e"]
+[ext_resource type="StyleBox" uid="uid://b4ca5ocs6ge0e" path="res://styles/main_menu.stylebox" id="2_f7fke"]
+[ext_resource type="Texture2D" uid="uid://kj4syn8cdtx0" path="res://assets/RandomRectangle_4x3.png" id="2_thg70"]
+[ext_resource type="FontFile" uid="uid://w1dia7skc158" path="res://assets/font/Sta.Toasty_font.ttf" id="3_sbwx4"]
+[ext_resource type="Texture2D" uid="uid://dfoh0glkb4442" path="res://assets/Start.png" id="4_hooqb"]
+[ext_resource type="Texture2D" uid="uid://cd7oyr7ceftla" path="res://assets/StartPressed.png" id="5_heuip"]
+[ext_resource type="Texture2D" uid="uid://dd84c6t6ssbyx" path="res://assets/StartGray.png" id="6_4uuor"]
+[ext_resource type="Texture2D" uid="uid://c1cv4q1k6pgqk" path="res://assets/Exit.png" id="6_7537y"]
+[ext_resource type="Texture2D" uid="uid://dy276rgljpxcc" path="res://assets/ExitPressed.png" id="8_g2flx"]
+[ext_resource type="Texture2D" uid="uid://8j6gucpraby8" path="res://assets/ExitGray.png" id="9_8tdfe"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5yhfl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="BackgroundTexture" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("1_ya13e")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 450
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.75
+theme_override_constants/separation = -350
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = ExtResource("2_f7fke")
+text = "Flood's Edge"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("2_f7fke")
+text = "Island Exodus"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_hooqb")
+texture_pressed = ExtResource("5_heuip")
+texture_hover = ExtResource("6_4uuor")
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("6_7537y")
+texture_pressed = ExtResource("8_g2flx")
+texture_hover = ExtResource("9_8tdfe")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.05
+texture = ExtResource("2_thg70")
+
+[node name="Label" type="Label" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.75
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 75
+theme_override_fonts/font = ExtResource("3_sbwx4")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = ExtResource("2_f7fke")
+text = "Flood's Edge: Island Exodus"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
