@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp0brnrlk386m"]
+[gd_scene load_steps=3 format=3 uid="uid://bp0brnrlk386m"]
 
 [ext_resource type="PackedScene" uid="uid://dsdggrqp83jxq" path="res://scenes/scenes/level_selection/menu_items/menu_item/menu_item.tscn" id="1_y452a"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_w1wji"]
+
 [node name="MenuItem" instance=ExtResource("1_y452a")]
+level_name = "level 1"
 
 [node name="TileMap" parent="." index="0"]
 position = Vector2(32, 0)
@@ -12,6 +15,7 @@ layer_2/tile_data = PackedInt32Array(524290, 393217, 1, 327685, 393217, 1, 13108
 [node name="Button" parent="." index="1"]
 offset_right = 400.0
 offset_bottom = 296.0
+button_group = SubResource("ButtonGroup_w1wji")
 
 [node name="Sprite2D" parent="." index="2"]
 position = Vector2(160, 104)
