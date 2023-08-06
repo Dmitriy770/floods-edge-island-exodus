@@ -53,3 +53,12 @@ func check_levels_state() -> void:
 
 func _on_start_game_button_pressed() -> void:
 	all_levels[current_level_ind].start_game()
+
+
+func _on_exit_button_pressed():
+	var main_menu_scene := load("res://scenes/scenes/main_menu/main_menu.tscn")
+	SceneManager.change_scene(main_menu_scene)
+
+
+func _on_reset_button_pressed():
+	

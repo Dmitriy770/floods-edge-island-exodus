@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://df05g1iunley3"]
+[gd_scene load_steps=17 format=3 uid="uid://df05g1iunley3"]
 
 [ext_resource type="Script" path="res://scenes/scenes/level_selection/level_selection.gd" id="1_c0oc6"]
 [ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ev10o"]
@@ -7,9 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dfoh0glkb4442" path="res://assets/Start.png" id="6_k7833"]
 [ext_resource type="PackedScene" uid="uid://b0yprcjs8ucd1" path="res://scenes/scenes/level_selection/menu_items/menu_item_1/menu_item_1.tscn" id="7_0bo7m"]
 [ext_resource type="Texture2D" uid="uid://cd7oyr7ceftla" path="res://assets/StartPressed.png" id="7_cmkao"]
+[ext_resource type="Texture2D" uid="uid://n0vxubelma0o" path="res://assets/SimpleButton_Small.png" id="7_otsct"]
 [ext_resource type="Texture2D" uid="uid://dd84c6t6ssbyx" path="res://assets/StartGray.png" id="8_7bihp"]
 [ext_resource type="PackedScene" uid="uid://x36addprq4kx" path="res://scenes/scenes/level_selection/menu_items/menu_item_2/menu_item_2.tscn" id="8_08rhc"]
+[ext_resource type="Texture2D" uid="uid://c1cv4q1k6pgqk" path="res://assets/Exit.png" id="8_btfo0"]
+[ext_resource type="Texture2D" uid="uid://dy276rgljpxcc" path="res://assets/ExitPressed.png" id="9_peuqt"]
 [ext_resource type="PackedScene" uid="uid://cp5y73x1ct201" path="res://scenes/scenes/level_selection/menu_items/menu_item_3/menu_item_3.tscn" id="9_sfhcx"]
+[ext_resource type="Texture2D" uid="uid://8j6gucpraby8" path="res://assets/ExitGray.png" id="10_cy7no"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_gqd1t"]
 color = Color(1, 1, 1, 1)
@@ -217,6 +221,47 @@ theme_override_font_sizes/font_size = 100
 text = "SELECT LEVEL"
 horizontal_alignment = 1
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 1450
+theme_override_constants/margin_top = 975
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_stretch_ratio = 1.1
+color = Color(0.152941, 0.152941, 0.152941, 0.576471)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResetButton" type="TextureButton" parent="MarginContainer2/ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture_normal = ExtResource("7_otsct")
+stretch_mode = 5
+
+[node name="ExitButton" type="TextureButton" parent="MarginContainer2/ColorRect/HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture_normal = ExtResource("8_btfo0")
+texture_pressed = ExtResource("9_peuqt")
+texture_hover = ExtResource("10_cy7no")
+stretch_mode = 5
+
 [node name="MenuItems" type="Node2D" parent="."]
 
 [node name="MenuItem" parent="MenuItems" instance=ExtResource("6_30n2j")]
@@ -232,3 +277,4 @@ position = Vector2(976, 560)
 position = Vector2(1200, 432)
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/ColorRect/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
