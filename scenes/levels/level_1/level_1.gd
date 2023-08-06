@@ -3,8 +3,8 @@ extends Level
 var counter := 0
 var education_end := false
 
-@onready var label1 := $Education/Control/PanelContainer/Label as Label
-@onready var label2 := $Education/Control/PanelContainer/Label2 as Label
+@onready var label1 := $Education/Control/PanelContainer/MarginContainer/Label as Label
+@onready var label2 := $Education/Control/PanelContainer/MarginContainer/Label2 as Label
 @onready var education := $Education as CanvasLayer
 
 func _ready():
