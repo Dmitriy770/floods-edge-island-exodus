@@ -32,7 +32,7 @@ func update_level_window() -> void:
 	description_label.text = current_level.description
 	status_label.text = get_string_state(level_data.state)
 	time_label.text = str(level_data.transit_time)
-	tile_label.text = str(level_data.amount_spent_tiles)
+	tile_label.text = "N/A" if level_data.amount_spent_tiles == 0 else str(level_data.amount_spent_tiles)
 	
 	if level_data.state == LevelData.States.CLOSE:
 		start_game_buttom.disabled = true
