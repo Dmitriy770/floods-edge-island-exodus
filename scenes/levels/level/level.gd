@@ -1,4 +1,4 @@
-class_name Level1
+class_name Level
 extends Node2D
 
 const FOOD_PER_SECOND := 0.05
@@ -33,7 +33,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if food_amount < 0 or tile_amount < 0:
-		print("end_game")
+		# print("end_game")
+		pass
 	
 	if is_action_press and active_tool == HUD.Tools.BLOCK:
 		draw_ground()

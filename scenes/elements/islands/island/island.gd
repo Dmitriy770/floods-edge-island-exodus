@@ -5,15 +5,19 @@ signal island_reached(island: Island)
 signal island_clicked(island: Island)
 
 @export var tile_amount := 10
-@export var food_amount := 10 
+@export var food_amount := 10
+@export var landing_animation_name := ""
 
 var is_clickable := true
 
 @onready var target_position := ($TargetPosition as Marker2D).global_position
 @onready var tile_map := $TileMap as TileMap
+@onready var animation_player := $LandingAnimation/AnimationPlayer as AnimationPlayer
+@onready var animation_container := $LandingAnimation as Node2D
 
 func _ready() -> void:
 	tile_map.hide()
+	animation_container.hide()
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("action") && is_clickable:
@@ -61,6 +65,18 @@ func disable_click() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		print("player enter")
 		island_reached.emit(self)
 		food_amount = 0
 		tile_amount = 0
+		body.hide()
+		animation_container.show()
+		print(animation_player.get_animation_list())
+		animation_player.play(landing_animation_name)
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body is Player:
+		animation_player.play_backwards(landing_animation_name)
+		animation_container.hide()
+		body.show()

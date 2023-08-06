@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cu1rnjixfrywe" path="res://assets/forest.png" id="1_fskfp"]
 [ext_resource type="Texture2D" uid="uid://dnhlapg867wmt" path="res://assets/cursor.png" id="1_ggcyl"]
-[ext_resource type="Script" path="res://scenes/levels/level_1/hud/hud.gd" id="1_s5ivw"]
-[ext_resource type="ButtonGroup" uid="uid://r4hkhpy1i1ud" path="res://scenes/levels/level_1/hud/hud_button_group.tres" id="2_dbh43"]
+[ext_resource type="Script" path="res://scenes/levels/level/hud/hud.gd" id="1_s5ivw"]
+[ext_resource type="ButtonGroup" uid="uid://r4hkhpy1i1ud" path="res://scenes/levels/level/hud/hud_button_group.tres" id="2_dbh43"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfvus"]
 atlas = ExtResource("1_fskfp")

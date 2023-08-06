@@ -1,168 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddqb634ftp0p6"]
+[gd_scene load_steps=4 format=3 uid="uid://ddqb634ftp0p6"]
 
 [ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/islands/island/island.tscn" id="1_06et8"]
 [ext_resource type="Texture2D" uid="uid://b18oso8vfjxjo" path="res://assets/mPlayer_ [human].png" id="2_13rmu"]
 [ext_resource type="AnimationLibrary" uid="uid://j6l6pt0tokwo" path="res://resources/animations/landing_animation/hostile1_landing_animation.res" id="3_flno3"]
 
-[sub_resource type="Animation" id="Animation_yjx3u"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../LandingAnimation/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(51, 129)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../LandingAnimation/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(61, 128)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../LandingAnimation/Sprite2D3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(52, 139)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../LandingAnimation/Sprite2D4:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(64, 137)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../LandingAnimation/Sprite2D2:flip_h")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../LandingAnimation/Sprite2D:flip_h")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_yywpg"]
-resource_name = "landing_animation"
-length = 4.0
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../LandingAnimation/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(51, 129), Vector2(45, 111), Vector2(38, 91), Vector2(34, 70), Vector2(19, 58)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../LandingAnimation/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(61, 128), Vector2(72, 111), Vector2(80, 90), Vector2(78, 77)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../LandingAnimation/Sprite2D3:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2(52, 139), Vector2(36, 123)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../LandingAnimation/Sprite2D4:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [Vector2(64, 137), Vector2(84, 123), Vector2(107, 106), Vector2(130, 92)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../LandingAnimation/Sprite2D2:flip_h")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../LandingAnimation/Sprite2D:flip_h")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fuq7"]
-_data = {
-"RESET": SubResource("Animation_yjx3u"),
-"landing_animation": SubResource("Animation_yywpg")
-}
-
 [node name="HostileIsland1" instance=ExtResource("1_06et8")]
+landing_animation_name = "landing_animation"
 
 [node name="TileMap" parent="." index="0"]
 layer_1/tile_data = PackedInt32Array(131072, 65536, 5, 196608, 65536, 6, 262144, 65536, 7, 65537, 65536, 5, 131073, 327680, 6, 393217, 327680, 6, 2, 65536, 5, 65538, 327680, 6, 131074, 131072, 6, 262146, 655360, 3, 327682, 720896, 3, 393218, 720896, 4, 458754, 131072, 6, 524290, 327680, 5, 3, 131072, 5, 65539, 655360, 2, 131075, 131072, 6, 196611, 131072, 6, 262147, 131072, 6, 327683, 131072, 6, 393219, 655360, 1, 458755, 655360, 2, 524291, 655360, 4, 4, 131072, 5, 65540, 655360, 2, 131076, 655360, 2, 196612, 131072, 6, 262148, 131072, 6, 327684, 131072, 6, 393220, 655360, 3, 458756, 655360, 2, 524292, 262144, 5, 5, 196608, 5, 65541, 262144, 6, 131077, 655360, 2, 196613, 131072, 6, 262149, 131072, 6, 327685, 131072, 6, 393221, 655360, 2, 458757, 655360, 2, 524293, 131072, 7, 65542, 131072, 5, 131078, 655360, 2, 196614, 655360, 2, 262150, 131072, 6, 327686, 655360, 2, 393222, 655360, 2, 458758, 262144, 5, 524294, 196608, 7, 65543, 196608, 5, 131079, 262144, 6, 196615, 655360, 2, 262151, 655360, 2, 327687, 655360, 2, 393223, 262144, 5, 131080, 131072, 5, 196616, 131072, 6, 262152, 655360, 3, 327688, 720896, 1, 393224, 131072, 7, 327689, 720896, 4, 262153, 262144, 6, 196617, 196608, 6, 393225, 131072, 7, 393226, 196608, 7, 131081, 196608, 5, 262145, 327680, 5, 196609, 131072, 6, 196610, 131072, 6, 458759, 196608, 7, 327690, 196608, 6, 262154, 196608, 5, 458753, 655360, 3, 458752, 65536, 6, 524289, 131072, 7, 393216, 65536, 5, 327681, 65536, 6, 524288, 65536, 7, 589827, 131072, 7, 589826, 65536, 7, 589828, 196608, 7)
@@ -206,13 +49,7 @@ texture = ExtResource("2_13rmu")
 region_enabled = true
 region_rect = Rect2(8, 40, 16, 24)
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="LandingAnimation" index="4"]
-root_node = NodePath("")
-libraries = {
-"": SubResource("AnimationLibrary_6fuq7")
-}
-
-[node name="AnimationPlayer" parent="LandingAnimation" index="5"]
+[node name="AnimationPlayer" parent="LandingAnimation" index="4"]
 libraries = {
 "": ExtResource("3_flno3")
 }
