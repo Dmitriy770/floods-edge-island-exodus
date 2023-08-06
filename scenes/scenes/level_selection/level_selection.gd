@@ -3,6 +3,8 @@ extends Control
 var all_levels: Array[MenuItem] = []
 var current_level_ind := 0
 
+@onready var dialog_window := %Control as Control
+@onready var dialog_window_animation := %DialogWindowAnimation as AnimationPlayer
 @onready var header_label := %Header as Label
 @onready var description_label := %Description as Label
 @onready var status_label := %StatusLabel as Label
@@ -59,3 +61,31 @@ func check_levels_state() -> void:
 
 func _on_start_game_button_pressed() -> void:
 	all_levels[current_level_ind].start_game()
+
+
+func _on_exit_button_pressed():
+	var main_menu_scene := load("res://scenes/scenes/main_menu/main_menu.tscn")
+	SceneManager.change_scene(main_menu_scene)
+
+
+func _on_reset_button_pressed():
+	dialog_window.show()
+	dialog_window_animation.play('window_appear')
+
+
+func _on_exit_dialog_button_pressed():
+	dialog_window_animation.play_backwards('window_appear')
+	await dialog_window_animation.animation_finished
+	dialog_window.hide()
+
+func _on_confirm_button_pressed():
+	LevelsStorage.reset_all_levels_data()
+	
+	for item in items_container.get_children() as Array[MenuItem]:
+		item._ready()
+	check_levels_state()
+	update_level_window()
+	
+	dialog_window_animation.play_backwards('window_appear')
+	await dialog_window_animation.animation_finished
+	dialog_window.hide()
