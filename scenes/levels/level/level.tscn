@@ -30,14 +30,11 @@ layer_2/tile_data = PackedInt32Array()
 [node name="Islands" type="Node" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("10_xj1cr")]
-visible = false
 position = Vector2(160, 528)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
 
 [node name="HUD" parent="Player/Camera2D" instance=ExtResource("11_tpnkh")]
-visible = false
 
 [node name="FoodTimer" type="Timer" parent="."]
 autostart = true

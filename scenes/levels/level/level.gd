@@ -23,6 +23,7 @@ func _ready() -> void:
 	for island in islands_container.get_children() as Array[Island]:
 		island.island_clicked.connect(on_island_clicked)
 		island.island_reached.connect(on_island_reached)
+		island.player = player
 		add_tiles_from_island(island)
 
 func _unhandled_input(event: InputEvent) -> void:

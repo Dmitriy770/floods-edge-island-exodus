@@ -191,6 +191,7 @@ theme_override_constants/separation = 35
 alignment = 1
 
 [node name="StartGameButton" type="TextureButton" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3

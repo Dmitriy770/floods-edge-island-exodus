@@ -8,6 +8,7 @@ var current_level_ind := 0
 @onready var status_label := %StatusLabel as Label
 @onready var time_label := %TimeLabel as Label
 @onready var tile_label := %TileLabel as Label
+@onready var start_game_buttom := %StartGameButton as TextureButton
 
 @onready var items_container := $MenuItems as Node2D
 
@@ -29,6 +30,11 @@ func update_level_window() -> void:
 	status_label.text = get_string_state(level_data.state)
 	tile_label.text = str(level_data.transit_time)
 	tile_label.text = str(level_data.amount_spent_tiles)
+	
+	if level_data.state == LevelData.States.CLOSE:
+		start_game_buttom.disabled = true
+	else:
+		start_game_buttom.disabled = false
 
 func get_string_state(state: LevelData.States) -> String:
 	match state:
