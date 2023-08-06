@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 
 SceneAnimations="*res://core/scene_animations/scene_animations.tscn"
 SceneManager="*res://core/scene_manager.gd"
+LevelsStorage="*res://core/levels_storage.gd"
 
 [display]
 
