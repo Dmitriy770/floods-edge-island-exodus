@@ -1,14 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs7hiav6f0agu"]
+[gd_scene load_steps=10 format=3 uid="uid://bs7hiav6f0agu"]
 
 [ext_resource type="PackedScene" uid="uid://dv5bjg8vf5ycb" path="res://scenes/levels/level/level.tscn" id="1_ia3br"]
+[ext_resource type="Script" path="res://scenes/levels/level_1/level_1.gd" id="2_y6ut5"]
 [ext_resource type="PackedScene" uid="uid://cd5q3cn8y146s" path="res://scenes/elements/islands/healing_island/healing_island_2.tscn" id="4_43lca"]
 [ext_resource type="PackedScene" uid="uid://caa1uw70drs5w" path="res://scenes/elements/islands/resource_island/resource_island_2.tscn" id="5_cd771"]
 [ext_resource type="PackedScene" uid="uid://8bltitsy1nej" path="res://scenes/elements/islands/hostile_island/hostile_island_2.tscn" id="7_fw2t1"]
+[ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="7_ixqxa"]
 [ext_resource type="PackedScene" uid="uid://bbi5q4y5w6nap" path="res://scenes/elements/islands/finish_island/finish_island.tscn" id="8_04e67"]
 [ext_resource type="PackedScene" uid="uid://dlkd61icxxa2f" path="res://scenes/elements/islands/start_island/start_island.tscn" id="9_e7efq"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oet37"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 0.796078)
+
 [node name="Level 1" node_paths=PackedStringArray("final_island") instance=ExtResource("1_ia3br")]
+script = ExtResource("2_y6ut5")
 final_island = NodePath("Islands/FinishIsland")
+current_scene = null
 level_name = "level 1"
 tile_amount = 30
 
@@ -32,3 +39,60 @@ position = Vector2(1536, 384)
 
 [node name="Player" parent="." index="2"]
 position = Vector2(64, 432)
+
+[node name="Education" type="CanvasLayer" parent="." index="5"]
+
+[node name="Control" type="Control" parent="Education" index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Education/Control" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oet37")
+
+[node name="Label" type="Label" parent="Education/Control/PanelContainer" index="0"]
+visible = false
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_ixqxa")
+theme_override_font_sizes/font_size = 30
+text = "Много лет назад, на Земле случилось великое наводнение, вода стремительно сметала на своём пути всё!
+
+Спустя длительное время уровень воды перестал расти, но большая часть населения погибла, а те, кому удалось выжить, остались без дома..."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Education/Control/PanelContainer" index="1"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("7_ixqxa")
+theme_override_font_sizes/font_size = 25
+text = "Твоя задача помочь группе путников добраться до материка, чтобы вновь обрести дом и возродить человеческую цивилизацию!
+
+У тебя есть два инструмента ПЛИТКА и КУРСОР. С помощью первого ты можешь проложить путь между островами, а вторым направить племя на нужный остров, но будь аккуратен КОЛИЧЕСТВО плиток ОГРАНИЧЕНО.
+
+ПЛИТКА - нажми по иконке \"плитка\" в меню снизу и с помощью ЛКМ проложи дорогу
+
+КУРСОР - нажми по иконке \"курсор\" в меню снизу и с помощью ЛКМ выбери, остров на который желаешь направить племя.
+
+Также у путников есть шкала ГОЛОД, которая убавляется с течением времени, её можно восполнить на островах с едой.
+
+Всего есть три типа островов:
+Остров с ЕДОЙ - при заходе на него ШКАЛА голода ПОПОЛНЯЕТСЯ
+Остров с ПРИПАСАМИ - при заходе на него ПОПОЛНЯЕТСЯ КОЛИЧЕСТВО доступных для стройки ПЛИТОК
+Остров с ОПАСНОСТЯМИ - при заходе на него ШКАЛА голода УБАВЛЯЕТСЯ"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="gui_input" from="Education/Control" to="." method="_on_control_gui_input"]

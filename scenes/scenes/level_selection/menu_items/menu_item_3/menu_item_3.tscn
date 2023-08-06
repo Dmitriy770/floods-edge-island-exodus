@@ -7,6 +7,7 @@
 
 [node name="MenuItem" instance=ExtResource("1_y1ai7")]
 level_name = "level 4"
+description = "Весьма длинный разветвлённый участок, преобладает зелёная растительность, на некоторых островах можно найти пополнить пищу и припасы..."
 level_scene = ExtResource("2_3aki5")
 
 [node name="TileMap" parent="." index="0"]

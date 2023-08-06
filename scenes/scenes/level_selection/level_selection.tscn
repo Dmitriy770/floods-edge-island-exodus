@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://df05g1iunley3"]
+[gd_scene load_steps=14 format=3 uid="uid://df05g1iunley3"]
 
 [ext_resource type="Script" path="res://scenes/scenes/level_selection/level_selection.gd" id="1_c0oc6"]
 [ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ev10o"]
 [ext_resource type="FontFile" uid="uid://w1dia7skc158" path="res://assets/font/Sta.Toasty_font.ttf" id="2_ybvrs"]
+[ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="4_ve6ut"]
 [ext_resource type="PackedScene" uid="uid://bp0brnrlk386m" path="res://scenes/scenes/level_selection/menu_items/menu_item_start/menu_item_start.tscn" id="6_30n2j"]
 [ext_resource type="Texture2D" uid="uid://dfoh0glkb4442" path="res://assets/Start.png" id="6_k7833"]
 [ext_resource type="PackedScene" uid="uid://b0yprcjs8ucd1" path="res://scenes/scenes/level_selection/menu_items/menu_item_1/menu_item_1.tscn" id="7_0bo7m"]
@@ -115,12 +116,11 @@ theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
 theme_override_constants/line_spacing = 25
-theme_override_fonts/font = ExtResource("2_ybvrs")
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 20
 text = "Karoche etot ostrov tipa aoaoao oaoaao oaao oaoa oaoao aoaoao aoaoa oaoaoao aoao xUUUUUUUUUUUUUUUUUI 
 "
 horizontal_alignment = 3
-vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer"]
