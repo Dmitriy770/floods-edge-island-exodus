@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		is_action_press = false
 
 func _physics_process(_delta: float) -> void:
-	if food_amount < 0 or tile_amount < 0:
+	if food_amount < 0 or tile_amount <= 0:
 		end_game_overlay.show_overlay(false, 0, tiles_spend, current_scene, level_name)
 	
 	if is_action_press and active_tool == HUD.Tools.BLOCK:

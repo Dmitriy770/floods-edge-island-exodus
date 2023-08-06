@@ -1,9 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv21dagw8l67i"]
+[gd_scene load_steps=8 format=3 uid="uid://dv21dagw8l67i"]
 
 [ext_resource type="Texture2D" uid="uid://cu1rnjixfrywe" path="res://assets/forest.png" id="1_fskfp"]
 [ext_resource type="Texture2D" uid="uid://dnhlapg867wmt" path="res://assets/cursor.png" id="1_ggcyl"]
 [ext_resource type="Script" path="res://scenes/levels/level/hud/hud.gd" id="1_s5ivw"]
 [ext_resource type="ButtonGroup" uid="uid://r4hkhpy1i1ud" path="res://scenes/levels/level/hud/hud_button_group.tres" id="2_dbh43"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_leipf"]
+thickness = 30
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jtghy"]
+color = Color(0, 0.513726, 0, 1)
+thickness = 30
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfvus"]
 atlas = ExtResource("1_fskfp")
@@ -41,6 +48,9 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxLine_leipf")
+theme_override_styles/fill = SubResource("StyleBoxLine_jtghy")
 
 [node name="Control" type="Control" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -76,6 +86,7 @@ theme_override_constants/margin_bottom = 4
 [node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer/Cursor/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("1_ggcyl")
+expand_mode = 1
 
 [node name="Block" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
