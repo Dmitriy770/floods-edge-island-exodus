@@ -1,8 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd5q3cn8y146s"]
+[gd_scene load_steps=6 format=3 uid="uid://cd5q3cn8y146s"]
 
 [ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/islands/island/island.tscn" id="1_f2e3m"]
 [ext_resource type="Texture2D" uid="uid://b18oso8vfjxjo" path="res://assets/mPlayer_ [human].png" id="2_mx42m"]
 [ext_resource type="AnimationLibrary" uid="uid://c4erqj7ppqysq" path="res://resources/animations/landing_animation/healing2_landing_animation.res" id="3_vv00k"]
+
+[sub_resource type="Animation" id="Animation_dr3ou"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(73, 118)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(82, 117)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 124)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(89, 120)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D3:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite2D:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10pl7"]
+_data = {
+"RESET": SubResource("Animation_dr3ou")
+}
 
 [node name="HealingIsland2" instance=ExtResource("1_f2e3m")]
 landing_animation_name = "healing2_landing_animation/landing_animation"
@@ -20,35 +100,36 @@ polygon = PackedVector2Array(-32, 8, -16, 8, -16, -24, 48, -24, 48, -8, 96, -8, 
 position = Vector2(104, 104)
 
 [node name="Sprite2D" type="Sprite2D" parent="LandingAnimation" index="0"]
-position = Vector2(47, 105)
+position = Vector2(73, 118)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_mx42m")
 region_enabled = true
 region_rect = Rect2(8, 168, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="LandingAnimation" index="1"]
-position = Vector2(81, 94)
+position = Vector2(82, 117)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_mx42m")
 region_enabled = true
 region_rect = Rect2(8, 168, 16, 24)
 
 [node name="Sprite2D3" type="Sprite2D" parent="LandingAnimation" index="2"]
-position = Vector2(159, 121)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_mx42m")
-region_enabled = true
-region_rect = Rect2(8, 168, 16, 24)
-
-[node name="Sprite2D4" type="Sprite2D" parent="LandingAnimation" index="3"]
-position = Vector2(94, 73)
+position = Vector2(80, 124)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_mx42m")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(8, 168, 16, 24)
 
+[node name="Sprite2D4" type="Sprite2D" parent="LandingAnimation" index="3"]
+position = Vector2(89, 120)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_mx42m")
+region_enabled = true
+region_rect = Rect2(8, 168, 16, 24)
+
 [node name="AnimationPlayer" parent="LandingAnimation" index="4"]
 libraries = {
+"": SubResource("AnimationLibrary_10pl7"),
 "healing2_landing_animation": ExtResource("3_vv00k")
 }
