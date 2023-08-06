@@ -5,6 +5,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://djwl876q4a48o" path="res://resources/animations/landing_animation/healing1_landing_animation.res" id="3_rv74f"]
 
 [node name="HealingIsland1" instance=ExtResource("1_pii5n")]
+tile_amount = 0
 landing_animation_name = "landing_animation"
 
 [node name="TileMap" parent="." index="0"]

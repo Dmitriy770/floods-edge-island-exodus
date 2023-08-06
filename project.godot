@@ -13,13 +13,14 @@ config_version=5
 config/name="Flood's Edge: Island Exodus"
 run/main_scene="res://scenes/scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
 SceneAnimations="*res://core/scene_animations/scene_animations.tscn"
 SceneManager="*res://core/scene_manager.gd"
 LevelsStorage="*res://core/levels_storage.gd"
+MusicPlayer="*res://core/music_player.tscn"
 
 [display]
 

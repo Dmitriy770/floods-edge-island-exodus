@@ -5,6 +5,8 @@
 [ext_resource type="AnimationLibrary" uid="uid://bak2lyylklsgk" path="res://resources/animations/landing_animation/hostile2_landing_animation.res" id="3_b572h"]
 
 [node name="HostileIsland2" instance=ExtResource("1_35d0d")]
+tile_amount = 0
+food_amount = -10
 landing_animation_name = "hostile2_landing_animation/landing_animation"
 
 [node name="TileMap" parent="." index="0"]
