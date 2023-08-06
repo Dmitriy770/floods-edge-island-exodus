@@ -12,4 +12,5 @@ layer_1/tile_data = PackedInt32Array(2, 65536, 5, 65538, 327680, 6, 131074, 7208
 layer_2/tile_data = PackedInt32Array(131073, 65537, 1, 458756, 393217, 1, 458754, 262145, 3, 131077, 131073, 3, 65540, 65537, 1)
 
 [node name="Button" parent="." index="1"]
+offset_bottom = 144.0
 button_group = SubResource("ButtonGroup_0tife")
