@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://df05g1iunley3"]
+[gd_scene load_steps=20 format=3 uid="uid://df05g1iunley3"]
 
 [ext_resource type="Script" path="res://scenes/scenes/level_selection/level_selection.gd" id="1_c0oc6"]
 [ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ev10o"]
@@ -22,6 +22,43 @@ thickness = 6
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_3sibo"]
 color = Color(1, 1, 1, 1)
 thickness = 6
+
+[sub_resource type="Animation" id="Animation_08364"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3xw7a"]
+resource_name = "window_appear"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Control:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rkkl"]
+_data = {
+"RESET": SubResource("Animation_08364"),
+"window_appear": SubResource("Animation_3xw7a")
+}
 
 [node name="LevelSelection" type="Control"]
 layout_mode = 3
@@ -276,5 +313,96 @@ position = Vector2(976, 560)
 [node name="MenuItem3" parent="MenuItems" instance=ExtResource("9_sfhcx")]
 position = Vector2(1200, 432)
 
+[node name="DialogWindow" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 300
+
+[node name="Control" type="Control" parent="DialogWindow/MarginContainer"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogWindow/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogWindow/MarginContainer/Control/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 125
+
+[node name="Message" type="Label" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_constants/line_spacing = 35
+theme_override_font_sizes/font_size = 50
+text = "Are you sure you want to permanently delete your progress?
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -40
+
+[node name="ExitDialogButton" type="TextureButton" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture_normal = ExtResource("8_btfo0")
+texture_pressed = ExtResource("9_peuqt")
+texture_hover = ExtResource("10_cy7no")
+stretch_mode = 5
+
+[node name="ConfirmButton" type="TextureButton" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture_normal = ExtResource("6_k7833")
+texture_pressed = ExtResource("7_cmkao")
+texture_hover = ExtResource("8_7bihp")
+stretch_mode = 5
+
+[node name="DialogWindowAnimation" type="AnimationPlayer" parent="DialogWindow"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_4rkkl")
+}
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer2/ColorRect/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="MarginContainer2/ColorRect/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ExitDialogButton" to="." method="_on_exit_dialog_button_pressed"]
+[connection signal="pressed" from="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton" to="." method="_on_confirm_button_pressed"]
