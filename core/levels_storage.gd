@@ -2,6 +2,8 @@ extends Node
 
 const  SAVE_GAME_FILE := "user://savegame.save"
 
+func _ready() -> void:
+	set_default_date()
 
 func get_level_data(name: String) -> LevelData:
 	return LevelData.new()
@@ -43,7 +45,7 @@ func load_level_data() -> Dictionary:
 	var data = json_object.get_data()
 	return data
 
-func reset_all_levels_data():
+func reset_all_levels_data() -> void:
 	var save_game_file = FileAccess.open(SAVE_GAME_FILE, FileAccess.WRITE)
 	
 	if save_game_file == null:
@@ -52,3 +54,13 @@ func reset_all_levels_data():
 	
 	var json_object := JSON.new()
 	save_game_file.store_line(json_object.stringify({}))
+
+func set_default_date() -> void:
+	var old_levels_data := load_level_data()
+	
+	if old_levels_data.is_empty():
+		var default_level := LevelData.new()
+		default_level.name = "level 1"
+		default_level.state = LevelData.States.OPEN
+		
+		save_level_data(default_level)
