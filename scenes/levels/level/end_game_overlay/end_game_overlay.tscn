@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://d2htntf36811b"]
 
 [ext_resource type="Script" path="res://scenes/levels/level/end_game_overlay/end_game_overlay.gd" id="1_u28go"]
-[ext_resource type="Texture2D" uid="uid://fu3fi0xhyuw5" path="res://assets/Menu.png" id="2_m1ms0"]
+[ext_resource type="Texture2D" uid="uid://fu3fi0xhyuw5" path="res://assets/menu.png" id="2_mggc2"]
 [ext_resource type="Texture2D" uid="uid://bbh38jpixj5t8" path="res://assets/menu_pressed.png" id="3_6jhp2"]
 [ext_resource type="Texture2D" uid="uid://dhgtvbmrk05yf" path="res://assets/Rest.png" id="4_lrkpu"]
 [ext_resource type="Texture2D" uid="uid://dpbv7lvmpvoh5" path="res://assets/menu_gray.png" id="4_yg47t"]
@@ -225,7 +225,7 @@ custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-texture_normal = ExtResource("2_m1ms0")
+texture_normal = ExtResource("2_mggc2")
 texture_pressed = ExtResource("3_6jhp2")
 texture_hover = ExtResource("4_yg47t")
 stretch_mode = 5

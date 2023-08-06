@@ -15,6 +15,7 @@ var current_level_ind := 0
 @onready var items_container := $MenuItems as Node2D
 
 func _ready() -> void:
+	dialog_window.hide()
 	for item in items_container.get_children() as Array[MenuItem]:
 		item.index = len(all_levels)
 		item.level_selected.connect(on_level_selected)

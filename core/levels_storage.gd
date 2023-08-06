@@ -60,8 +60,8 @@ func reset_all_levels_data() -> void:
 		printerr("save failed with error code {0}".format([FileAccess.get_open_error()]))
 		return
 	
-	var json_object := JSON.new()
-	save_game_file.store_line(json_object.stringify({}))
+	save_game_file.store_line(JSON.stringify({}))
+	save_game_file.close()
 	set_default_data()
 
 func set_default_data() -> void:

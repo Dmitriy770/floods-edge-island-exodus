@@ -12,12 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://dd84c6t6ssbyx" path="res://assets/StartGray.png" id="8_7bihp"]
 [ext_resource type="PackedScene" uid="uid://x36addprq4kx" path="res://scenes/scenes/level_selection/menu_items/menu_item_2/menu_item_2.tscn" id="8_08rhc"]
 [ext_resource type="Texture2D" uid="uid://c1cv4q1k6pgqk" path="res://assets/Exit.png" id="8_btfo0"]
-[ext_resource type="Texture2D" uid="uid://fu3fi0xhyuw5" path="res://assets/Menu.png" id="8_mpkm2"]
 [ext_resource type="Texture2D" uid="uid://dd8d47ckmdyjn" path="res://assets/ResetPassed.png" id="8_vtmxc"]
 [ext_resource type="Texture2D" uid="uid://dy276rgljpxcc" path="res://assets/ExitPressed.png" id="9_peuqt"]
 [ext_resource type="PackedScene" uid="uid://cp5y73x1ct201" path="res://scenes/scenes/level_selection/menu_items/menu_item_3/menu_item_3.tscn" id="9_sfhcx"]
 [ext_resource type="Texture2D" uid="uid://detg1cw56wxtx" path="res://assets/ResetGray.png" id="9_wxu5x"]
 [ext_resource type="Texture2D" uid="uid://8j6gucpraby8" path="res://assets/ExitGray.png" id="10_cy7no"]
+[ext_resource type="Texture2D" uid="uid://fu3fi0xhyuw5" path="res://assets/menu.png" id="11_1muc4"]
 [ext_resource type="Texture2D" uid="uid://bbh38jpixj5t8" path="res://assets/menu_pressed.png" id="12_oea6x"]
 [ext_resource type="Texture2D" uid="uid://dpbv7lvmpvoh5" path="res://assets/menu_gray.png" id="13_l0p7p"]
 
@@ -328,7 +328,7 @@ custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("8_mpkm2")
+texture_normal = ExtResource("11_1muc4")
 texture_pressed = ExtResource("12_oea6x")
 texture_hover = ExtResource("13_l0p7p")
 stretch_mode = 5
