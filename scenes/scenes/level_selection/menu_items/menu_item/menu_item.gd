@@ -20,8 +20,8 @@ var index := 0
 @onready var button := $Button as Button
 
 func _ready() -> void:
-	level_data = LevelData.new() # [данные из БД]
-	pass
+	level_data = LevelsStorage.get_level_data(level_name)
+	change_state(level_data.state)
 
 func change_state(new_state: LevelData.States) -> void:
 	level_data.state = new_state
