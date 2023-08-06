@@ -74,6 +74,12 @@ func _on_exit_dialog_button_pressed():
 
 func _on_confirm_button_pressed():
 	LevelsStorage.reset_all_levels_data()
+	
+	for item in items_container.get_children() as Array[MenuItem]:
+		item._ready()
+	check_levels_state()
+	update_level_window()
+	
 	dialog_window_animation.play_backwards('window_appear')
 	await dialog_window_animation.animation_finished
 	dialog_window.hide()
