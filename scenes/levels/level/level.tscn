@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dv5bjg8vf5ycb"]
+[gd_scene load_steps=6 format=3 uid="uid://dv5bjg8vf5ycb"]
 
 [ext_resource type="Script" path="res://scenes/levels/level/level.gd" id="1_k34g2"]
 [ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="2_v0t1o"]
+[ext_resource type="PackedScene" uid="uid://d2htntf36811b" path="res://scenes/levels/level/end_game_overlay/end_game_overlay.tscn" id="5_n2kb0"]
 [ext_resource type="PackedScene" uid="uid://lqhaiovxnu7q" path="res://scenes/elements/player/player.tscn" id="10_xj1cr"]
 [ext_resource type="PackedScene" uid="uid://dv21dagw8l67i" path="res://scenes/levels/level/hud/hud.tscn" id="11_tpnkh"]
 
@@ -38,6 +39,8 @@ position = Vector2(160, 528)
 
 [node name="FoodTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="EndGameOverlay" parent="." instance=ExtResource("5_n2kb0")]
 
 [connection signal="tool_changed" from="Player/Camera2D/HUD" to="." method="_on_hud_tool_changed"]
 [connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]

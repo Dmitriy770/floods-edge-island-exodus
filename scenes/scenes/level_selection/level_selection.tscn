@@ -148,6 +148,7 @@ theme_override_font_sizes/font_size = 32
 text = "close"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_constants/separation = 20

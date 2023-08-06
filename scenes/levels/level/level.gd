@@ -4,8 +4,11 @@ extends Node2D
 const FOOD_PER_SECOND := 0.05
 
 @export var final_island: Island = null
+@export var current_scene: PackedScene = null
+@export var level_name := ""
+@export var tile_amount := 15
 
-var tile_amount := 15
+var tiles_spend := 0
 var food_amount := 20.0
 var is_action_press := false
 var active_tool := HUD.Tools.CURSOR
@@ -14,6 +17,7 @@ var active_tool := HUD.Tools.CURSOR
 @onready var islands_container := $Islands as Node
 @onready var player := $Player as Player
 @onready var hud := $Player/Camera2D/HUD as HUD
+@onready var end_game_overlay := $EndGameOverlay as EndGameOverlay
 
 func _ready() -> void:
 	hud.update_block_amount_label(tile_amount)
@@ -34,8 +38,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if food_amount < 0 or tile_amount < 0:
-		# print("end_game")
-		pass
+		end_game_overlay.show_overlay(false, 0, tiles_spend, current_scene, level_name)
 	
 	if is_action_press and active_tool == HUD.Tools.BLOCK:
 		draw_ground()
@@ -56,6 +59,7 @@ func draw_ground() -> void:
 	
 	if tile_data == null or tile_data.get_custom_data("is_can_build"):
 		tile_map.set_cells_terrain_connect(layer, coords, terrain_set, terrain, true)
+		tiles_spend += 1
 		add_tiles(-1)
 
 func add_tiles(amount: int) -> void:
@@ -83,7 +87,7 @@ func on_island_reached(island: Island) -> void:
 	hud.update_block_amount_label(tile_amount)
 	
 	if island == final_island:
-		print("win_game")
+		end_game_overlay.show_overlay(true, 0, tiles_spend, current_scene, level_name)
 
 func _on_hud_tool_changed(tool: HUD.Tools) -> void:
 	active_tool = tool

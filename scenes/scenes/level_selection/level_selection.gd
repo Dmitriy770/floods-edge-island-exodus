@@ -28,7 +28,7 @@ func update_level_window() -> void:
 	header_label.text = current_level.level_name
 	description_label.text = current_level.description
 	status_label.text = get_string_state(level_data.state)
-	tile_label.text = str(level_data.transit_time)
+	time_label.text = str(level_data.transit_time)
 	tile_label.text = str(level_data.amount_spent_tiles)
 	
 	if level_data.state == LevelData.States.CLOSE:
