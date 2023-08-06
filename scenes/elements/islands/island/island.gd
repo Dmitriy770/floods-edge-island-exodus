@@ -5,7 +5,7 @@ signal island_reached(island: Island)
 signal island_clicked(island: Island)
 
 @export var tile_amount := 10
-@export var food_amount := 10
+@export var food_amount := 5
 @export var landing_animation_name := ""
 
 var is_clickable := true

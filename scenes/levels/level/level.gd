@@ -1,7 +1,7 @@
 class_name Level
 extends Node2D
 
-const FOOD_PER_SECOND := 0.05
+const FOOD_PER_SECOND := 0.1
 
 @export var final_island: Island = null
 @export var current_scene: PackedScene = null
