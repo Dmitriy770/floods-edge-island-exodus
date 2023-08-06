@@ -16,7 +16,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ExitAnimation="*res://scenes/animations/exit_animation/exit_animation.tscn"
+SceneAnimations="*res://core/scene_animations/scene_animations.tscn"
+SceneManager="*res://core/scene_manager.gd"
 
 [display]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfmsbqbt60x6y"]
 
-[ext_resource type="Script" path="res://scenes/animations/exit_animation/ExitAnimation.gd" id="1_uck1e"]
+[ext_resource type="Script" path="res://core/scene_animations/scene_animations.gd" id="1_ng6rq"]
 
 [sub_resource type="Animation" id="Animation_ay65l"]
 resource_name = "RESET"
@@ -39,8 +39,8 @@ _data = {
 "dissolve": SubResource("Animation_h2rcu")
 }
 
-[node name="ExitAnimation" type="CanvasLayer"]
-script = ExtResource("1_uck1e")
+[node name="SceneAnimations" type="CanvasLayer"]
+script = ExtResource("1_ng6rq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0)
