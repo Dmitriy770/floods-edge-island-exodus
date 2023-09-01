@@ -11,8 +11,6 @@ var path : Array = []
 @onready var navigation_agent := $NavigationAgent2D as NavigationAgent2D
 
 func _process(delta: float) -> void:
-	# if navigation_agent.is_target_reached():
-	#	state = State.IDLE
 		
 	if not path.is_empty() and abs(path[0].x - global_position.x) < 5 and abs(path[0].y - global_position.y) < 5:
 		path.pop_front()

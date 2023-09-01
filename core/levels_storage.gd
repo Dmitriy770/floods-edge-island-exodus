@@ -31,8 +31,7 @@ func save_level_data(level: LevelData) -> void:
 		"amount_spent_tiles": level.amount_spent_tiles,
 		}
 	
-	var json_object := JSON.new()
-	save_game_file.store_line(json_object.stringify(old_levels_data))
+	save_game_file.store_line(JSON.stringify(old_levels_data))
 	
 func load_level_data() -> Dictionary:
 	if not FileAccess.file_exists(SAVE_GAME_FILE):

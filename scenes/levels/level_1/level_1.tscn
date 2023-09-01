@@ -63,6 +63,7 @@ position = Vector2(1536, 384)
 position = Vector2(64, 432)
 
 [node name="Education" type="CanvasLayer" parent="." index="5"]
+visible = false
 
 [node name="Control" type="Control" parent="Education" index="0"]
 layout_mode = 3

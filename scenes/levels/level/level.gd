@@ -2,6 +2,7 @@ class_name Level
 extends Node2D
 
 const FOOD_PER_SECOND := 0.1
+const MAX_FOOD_AMOUNT := 20.0
 
 @export var final_island: Island = null
 @export var current_scene: PackedScene = null
@@ -9,7 +10,7 @@ const FOOD_PER_SECOND := 0.1
 @export var tile_amount := 15
 
 var tiles_spend := 0
-var food_amount := 20.0
+var food_amount := MAX_FOOD_AMOUNT
 var is_action_press := false
 var active_tool := HUD.Tools.CURSOR
 
@@ -21,7 +22,7 @@ var active_tool := HUD.Tools.CURSOR
 
 func _ready() -> void:
 	hud.update_block_amount_label(tile_amount)
-	hud.set_max_food(food_amount)
+	hud.set_max_food(MAX_FOOD_AMOUNT)
 	hud.update_food_bar(food_amount)
 	
 	for island in islands_container.get_children() as Array[Island]:
@@ -77,12 +78,10 @@ func on_island_clicked(island: Island) -> void:
 	if active_tool == HUD.Tools.CURSOR:
 		if player.can_move_to_island(island):
 			player.move_to_island(island)
-		else:
-			print("нельзя добраться до острова")
 
 func on_island_reached(island: Island) -> void:
 	tile_amount += island.tile_amount
-	food_amount += island.food_amount
+	food_amount += min(island.food_amount, MAX_FOOD_AMOUNT)
 	hud.update_food_bar(food_amount)
 	hud.update_block_amount_label(tile_amount)
 	
