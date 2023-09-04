@@ -8,6 +8,7 @@ const MAX_FOOD_AMOUNT := 20.0
 @export var current_scene: SceneManager.Scenes
 @export var level_name := ""
 @export var tile_amount := 15
+		
 
 var tiles_spend := 0
 var food_amount := MAX_FOOD_AMOUNT
@@ -20,6 +21,7 @@ var active_tool := HUD.Tools.CURSOR
 @onready var hud := $Player/Camera2D/HUD as HUD
 @onready var end_game_overlay := $EndGameOverlay as EndGameOverlay
 
+
 func _ready() -> void:
 	hud.update_block_amount_label(tile_amount)
 	hud.set_max_food(MAX_FOOD_AMOUNT)
@@ -31,18 +33,18 @@ func _ready() -> void:
 		island.player = player
 		add_tiles_from_island(island)
 
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("action"):
 		is_action_press = true
 	if event.is_action_released("action"):
 		is_action_press = false
 
+
 func _physics_process(_delta: float) -> void:
-	if food_amount < 0 or tile_amount <= 0:
-		end_game_overlay.show_overlay(false, 0, tiles_spend, current_scene, level_name)
-	
 	if is_action_press and active_tool == HUD.Tools.BLOCK:
 		draw_ground()
+
 
 func draw_ground() -> void:
 	var tile_pos := tile_map.local_to_map(get_global_mouse_position())
@@ -58,14 +60,27 @@ func draw_ground() -> void:
 	
 	var tile_data := tile_map.get_cell_tile_data(layer, tile_pos)
 	
-	if tile_data == null or tile_data.get_custom_data("is_can_build"):
+	if (tile_data == null or tile_data.get_custom_data("is_can_build")) and tile_amount > 0:
 		tile_map.set_cells_terrain_connect(layer, coords, terrain_set, terrain, true)
 		tiles_spend += 1
-		add_tiles(-1)
+		update_tiles_amount(tile_amount - 1)
 
-func add_tiles(amount: int) -> void:
-	tile_amount += amount
+
+func update_tiles_amount(new_amount: int) -> void:
+	if new_amount < tile_amount:
+			tiles_spend += tile_amount - new_amount
+	tile_amount = new_amount
 	hud.update_block_amount_label(tile_amount)
+	if tile_amount <= 0:
+		end_game(false)
+
+
+func update_food_amount(new_amount: int) -> void:
+	food_amount = min(new_amount, MAX_FOOD_AMOUNT)
+	hud.update_food_bar(food_amount)
+	if food_amount <= 0:
+		end_game(false)
+
 
 func add_tiles_from_island(island: Island) -> void:
 	var tiles := island.get_all_tiles()
@@ -74,19 +89,20 @@ func add_tiles_from_island(island: Island) -> void:
 		var coords := tile_map.local_to_map(island.global_position + tile.cords)
 		tile_map.set_cell(tile.layer, coords, tile.source_id, tile.atlas_coords)
 
+
 func on_island_clicked(island: Island) -> void:
 	if active_tool == HUD.Tools.CURSOR:
 		if player.can_move_to_island(island):
 			player.move_to_island(island)
 
+
 func on_island_reached(island: Island) -> void:
-	tile_amount += island.tile_amount
-	food_amount += min(island.food_amount, MAX_FOOD_AMOUNT)
-	hud.update_food_bar(food_amount)
-	hud.update_block_amount_label(tile_amount)
+	update_tiles_amount(tile_amount + island.tile_amount)
+	update_food_amount(food_amount + island.food_amount)
 	
 	if island == final_island:
-		end_game_overlay.show_overlay(true, 0, tiles_spend, current_scene, level_name)
+		end_game(true)
+
 
 func _on_hud_tool_changed(tool: HUD.Tools) -> void:
 	active_tool = tool
@@ -100,5 +116,8 @@ func _on_hud_tool_changed(tool: HUD.Tools) -> void:
 
 
 func _on_food_timer_timeout():
-	food_amount -= FOOD_PER_SECOND
-	hud.update_food_bar(food_amount)
+	update_food_amount(food_amount - FOOD_PER_SECOND)
+
+
+func end_game(is_win: bool) -> void:
+	end_game_overlay.show_overlay(is_win, 0, tiles_spend, current_scene, level_name)
