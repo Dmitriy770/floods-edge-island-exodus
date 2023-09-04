@@ -1,7 +1,7 @@
 class_name EndGameOverlay
 extends CanvasLayer
 
-var previous_scene: PackedScene = null
+var current_scene : SceneManager.Scenes 
 var is_open := false
 
 @onready var header_label := %Header as Label
@@ -13,12 +13,12 @@ var is_open := false
 func _ready():
 	hide()
 
-func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scene: PackedScene, level_name: String) -> void:
+func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scene_name: SceneManager.Scenes, level_name: String) -> void:
 	if is_open:
 		return
 	is_open = true
 	save_level_data(level_name, result, transit_time, amount_spent_tiles)
-	previous_scene = scene
+	current_scene = scene_name
 	show()
 	animation_player.play("appearance_overlay")
 	if result:
@@ -43,9 +43,8 @@ func save_level_data(name: String, is_win: bool, time: float, tiles: int) -> voi
 
 
 func _on_start_game_button_pressed():
-	var level_selection := load("res://scenes/scenes/level_selection/level_selection.tscn")
-	SceneManager.change_scene(level_selection)
+	SceneManager.change_scene(SceneManager.Scenes.LEVELS_MENU)
 
 
 func _on_reset_game_button_pressed():
-	SceneManager.change_scene(previous_scene)
+	SceneManager.change_scene(current_scene)

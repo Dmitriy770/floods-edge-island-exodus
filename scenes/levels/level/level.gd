@@ -5,7 +5,7 @@ const FOOD_PER_SECOND := 0.1
 const MAX_FOOD_AMOUNT := 20.0
 
 @export var final_island: Island = null
-@export var current_scene: PackedScene = null
+@export var current_scene: SceneManager.Scenes
 @export var level_name := ""
 @export var tile_amount := 15
 

@@ -65,8 +65,7 @@ func _on_start_game_button_pressed() -> void:
 
 
 func _on_exit_button_pressed():
-	var main_menu_scene := load("res://scenes/scenes/main_menu/main_menu.tscn")
-	SceneManager.change_scene(main_menu_scene)
+	SceneManager.change_scene(SceneManager.Scenes.MAIN_MENU)
 
 
 func _on_reset_button_pressed():

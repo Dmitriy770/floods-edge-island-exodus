@@ -38,6 +38,7 @@ animations = [{
 [node name="Level 1" node_paths=PackedStringArray("final_island") instance=ExtResource("1_ia3br")]
 script = ExtResource("2_y6ut5")
 final_island = NodePath("Islands/FinishIsland")
+current_scene = 2
 level_name = "level 1"
 tile_amount = 30
 
@@ -63,7 +64,6 @@ position = Vector2(1536, 384)
 position = Vector2(64, 432)
 
 [node name="Education" type="CanvasLayer" parent="." index="5"]
-visible = false
 
 [node name="Control" type="Control" parent="Education" index="0"]
 layout_mode = 3

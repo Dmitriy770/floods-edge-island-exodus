@@ -11,7 +11,7 @@ const SPRITES := {
 
 @export var level_name := "level"
 @export var description := "description"
-@export var level_scene := preload("res://scenes/levels/level/level.tscn") as PackedScene
+@export var level_scene_name : SceneManager.Scenes
 
 var level_data: LevelData = null
 var index := 0
@@ -35,4 +35,4 @@ func grab_focus() -> void:
 	button.grab_focus()
 
 func start_game() -> void:
-	SceneManager.change_scene(level_scene)
+	SceneManager.change_scene(level_scene_name)
