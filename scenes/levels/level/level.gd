@@ -75,7 +75,7 @@ func update_tiles_amount(new_amount: int) -> void:
 		end_game(false)
 
 
-func update_food_amount(new_amount: int) -> void:
+func update_food_amount(new_amount: float) -> void:
 	food_amount = min(new_amount, MAX_FOOD_AMOUNT)
 	hud.update_food_bar(food_amount)
 	if food_amount <= 0:
