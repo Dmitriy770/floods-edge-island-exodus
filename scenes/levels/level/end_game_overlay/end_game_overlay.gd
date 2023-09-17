@@ -22,9 +22,9 @@ func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scen
 	show()
 	animation_player.play("appearance_overlay")
 	if result:
-		header_label.text = "WIN"
+		header_label.text = "ПОБЕДА"
 	else:
-		header_label.text = "LOSS"
+		header_label.text = "НЕУДАЧА"
 	
 	time_label.text = str(transit_time)
 	tile_label.text = str(amount_spent_tiles)
