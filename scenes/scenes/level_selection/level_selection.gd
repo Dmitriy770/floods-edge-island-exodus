@@ -42,11 +42,11 @@ func update_level_window() -> void:
 func get_string_state(state: LevelData.States) -> String:
 	match state:
 		LevelData.States.OPEN:
-			return "Open"
+			return "Открыт"
 		LevelData.States.CLOSE:
-			return "Close"
+			return "Недоступен"
 		LevelData.States.PASSED:
-			return "Passed"
+			return "Пройден"
 	return ""
 
 func on_level_selected(index: int) -> void:

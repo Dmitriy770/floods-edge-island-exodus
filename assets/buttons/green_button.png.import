@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd84c6t6ssbyx"
-path="res://.godot/imported/StartGray.png-62cbbf3869c3eb026fa5debc4b574f4a.ctex"
+uid="uid://c7vjb513y3vn8"
+path="res://.godot/imported/green_button.png-cfb955361a511d0a018fcc63aa82d23e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/StartGray.png"
-dest_files=["res://.godot/imported/StartGray.png-62cbbf3869c3eb026fa5debc4b574f4a.ctex"]
+source_file="res://assets/buttons/green_button.png"
+dest_files=["res://.godot/imported/green_button.png-cfb955361a511d0a018fcc63aa82d23e.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
