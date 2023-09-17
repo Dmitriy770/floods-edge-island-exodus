@@ -9,7 +9,7 @@ const SPRITES := {
 	LevelData.States.PASSED: preload("res://assets/level_passed_marker.png"),
 }
 
-@export var level_name := "level"
+@export var level_name := "Level"
 @export var description := "description"
 @export var level_scene_name : SceneManager.Scenes
 

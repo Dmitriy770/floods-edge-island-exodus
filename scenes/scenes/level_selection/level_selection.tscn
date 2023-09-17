@@ -1,25 +1,19 @@
-[gd_scene load_steps=26 format=3 uid="uid://df05g1iunley3"]
+[gd_scene load_steps=20 format=3 uid="uid://df05g1iunley3"]
 
 [ext_resource type="Script" path="res://scenes/scenes/level_selection/level_selection.gd" id="1_c0oc6"]
 [ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ev10o"]
-[ext_resource type="FontFile" uid="uid://w1dia7skc158" path="res://assets/font/Sta.Toasty_font.ttf" id="2_ybvrs"]
 [ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="4_ve6ut"]
+[ext_resource type="Texture2D" uid="uid://c7vjb513y3vn8" path="res://assets/buttons/green_button.png" id="5_6uyca"]
+[ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="6_1d8jl"]
 [ext_resource type="PackedScene" uid="uid://bp0brnrlk386m" path="res://scenes/scenes/level_selection/menu_items/menu_item_start/menu_item_start.tscn" id="6_30n2j"]
-[ext_resource type="Texture2D" uid="uid://dfoh0glkb4442" path="res://assets/Start.png" id="6_k7833"]
 [ext_resource type="PackedScene" uid="uid://b0yprcjs8ucd1" path="res://scenes/scenes/level_selection/menu_items/menu_item_1/menu_item_1.tscn" id="7_0bo7m"]
-[ext_resource type="Texture2D" uid="uid://cd7oyr7ceftla" path="res://assets/StartPressed.png" id="7_cmkao"]
-[ext_resource type="Texture2D" uid="uid://cpcd1fppgprnh" path="res://assets/Reset.png" id="7_ypxhe"]
-[ext_resource type="Texture2D" uid="uid://dd84c6t6ssbyx" path="res://assets/StartGray.png" id="8_7bihp"]
+[ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="7_8ey28"]
 [ext_resource type="PackedScene" uid="uid://x36addprq4kx" path="res://scenes/scenes/level_selection/menu_items/menu_item_2/menu_item_2.tscn" id="8_08rhc"]
-[ext_resource type="Texture2D" uid="uid://c1cv4q1k6pgqk" path="res://assets/Exit.png" id="8_btfo0"]
-[ext_resource type="Texture2D" uid="uid://dd8d47ckmdyjn" path="res://assets/ResetPassed.png" id="8_vtmxc"]
-[ext_resource type="Texture2D" uid="uid://dy276rgljpxcc" path="res://assets/ExitPressed.png" id="9_peuqt"]
+[ext_resource type="Texture2D" uid="uid://b4kfqb55jwd84" path="res://assets/buttons/button_disabled.png" id="8_iwffl"]
+[ext_resource type="Texture2D" uid="uid://luu5jmacaisq" path="res://assets/buttons/red_button.png" id="9_fbpme"]
 [ext_resource type="PackedScene" uid="uid://cp5y73x1ct201" path="res://scenes/scenes/level_selection/menu_items/menu_item_3/menu_item_3.tscn" id="9_sfhcx"]
-[ext_resource type="Texture2D" uid="uid://detg1cw56wxtx" path="res://assets/ResetGray.png" id="9_wxu5x"]
-[ext_resource type="Texture2D" uid="uid://8j6gucpraby8" path="res://assets/ExitGray.png" id="10_cy7no"]
-[ext_resource type="Texture2D" uid="uid://c8frcjw5b745h" path="res://assets/menu.png" id="11_1muc4"]
-[ext_resource type="Texture2D" uid="uid://bbh38jpixj5t8" path="res://assets/menu_pressed.png" id="12_oea6x"]
-[ext_resource type="Texture2D" uid="uid://dpbv7lvmpvoh5" path="res://assets/menu_gray.png" id="13_l0p7p"]
+[ext_resource type="Texture2D" uid="uid://dru2a4yueotj2" path="res://assets/buttons/red_button_pressed.png" id="10_mb1ti"]
+[ext_resource type="Texture2D" uid="uid://b54m4dyqc06pw" path="res://assets/buttons/red_button_hovered.png" id="11_tkcnf"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_gqd1t"]
 color = Color(1, 1, 1, 1)
@@ -145,9 +139,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/shadow_outline_size = 1
-theme_override_fonts/font = ExtResource("2_ybvrs")
-theme_override_font_sizes/font_size = 75
-text = "Level 1"
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 80
+text = "Уровень 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -187,8 +181,9 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 32
-text = "Status:"
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 40
+text = "Статус:"
 
 [node name="StatusLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4"]
 unique_name_in_owner = true
@@ -198,7 +193,8 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 40
 text = "close"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer"]
@@ -215,7 +211,8 @@ theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
 theme_override_font_sizes/font_size = 32
-text = "Spent time:"
+text = "
+:"
 
 [node name="TimeLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
@@ -235,8 +232,9 @@ theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 1
-theme_override_font_sizes/font_size = 32
-text = "Tiles spent:"
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 38
+text = "Потрачено блоков:"
 
 [node name="TileLabel" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
@@ -264,18 +262,34 @@ alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 0
-texture_normal = ExtResource("6_k7833")
-texture_pressed = ExtResource("7_cmkao")
-texture_hover = ExtResource("8_7bihp")
-texture_disabled = ExtResource("8_7bihp")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_6uyca")
+texture_pressed = ExtResource("6_1d8jl")
+texture_hover = ExtResource("7_8ey28")
+texture_disabled = ExtResource("8_iwffl")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ColorRect/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 60
+text = "Играть"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_top = 25
 
 [node name="SelectLevelLabel" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer"]
 layout_mode = 2
@@ -284,9 +298,9 @@ size_flags_vertical = 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 10
-theme_override_fonts/font = ExtResource("2_ybvrs")
+theme_override_fonts/font = ExtResource("4_ve6ut")
 theme_override_font_sizes/font_size = 100
-text = "SELECT LEVEL"
+text = "ВЫБЕРИТЕ УРОВЕНЬ"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
@@ -297,8 +311,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 1450
-theme_override_constants/margin_top = 975
+theme_override_constants/margin_left = 1350
+theme_override_constants/margin_top = 925
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
 layout_mode = 2
@@ -318,20 +332,56 @@ custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("7_ypxhe")
-texture_pressed = ExtResource("8_vtmxc")
-texture_hover = ExtResource("9_wxu5x")
+texture_normal = ExtResource("9_fbpme")
+texture_pressed = ExtResource("10_mb1ti")
+texture_hover = ExtResource("11_tkcnf")
+texture_disabled = ExtResource("8_iwffl")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer2/ColorRect/HBoxContainer/ResetButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 45
+text = "Сбросить"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MenuButton" type="TextureButton" parent="MarginContainer2/ColorRect/HBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
-texture_normal = ExtResource("11_1muc4")
-texture_pressed = ExtResource("12_oea6x")
-texture_hover = ExtResource("13_l0p7p")
+texture_normal = ExtResource("5_6uyca")
+texture_pressed = ExtResource("6_1d8jl")
+texture_hover = ExtResource("7_8ey28")
+texture_disabled = ExtResource("8_iwffl")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer2/ColorRect/HBoxContainer/MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 50
+text = "Меню"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MenuItems" type="Node2D" parent="."]
 
@@ -382,6 +432,7 @@ mouse_filter = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -393,40 +444,74 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 10
-theme_override_constants/outline_size = 1
+theme_override_constants/shadow_offset_y = 8
 theme_override_constants/shadow_outline_size = 1
-theme_override_constants/line_spacing = 35
-theme_override_font_sizes/font_size = 50
-text = "Are you sure you want to permanently delete your progress?
-"
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 70
+text = "Вы действительно хотите сбросить весь прогресс?"
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = -40
+theme_override_constants/separation = 305
 
 [node name="ExitDialogButton" type="TextureButton" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("8_btfo0")
-texture_pressed = ExtResource("9_peuqt")
-texture_hover = ExtResource("10_cy7no")
+texture_normal = ExtResource("5_6uyca")
+texture_pressed = ExtResource("6_1d8jl")
+texture_hover = ExtResource("7_8ey28")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ExitDialogButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 50
+text = "Отмена
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ConfirmButton" type="TextureButton" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("7_ypxhe")
-texture_pressed = ExtResource("8_vtmxc")
-texture_hover = ExtResource("9_wxu5x")
+texture_normal = ExtResource("9_fbpme")
+texture_pressed = ExtResource("10_mb1ti")
+texture_hover = ExtResource("11_tkcnf")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="DialogWindow/MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ConfirmButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("4_ve6ut")
+theme_override_font_sizes/font_size = 45
+text = "Сбросить"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DialogWindowAnimation" type="AnimationPlayer" parent="DialogWindow"]
 unique_name_in_owner = true

@@ -9,9 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbi5q4y5w6nap" path="res://scenes/elements/islands/finish_island/finish_island.tscn" id="8_04e67"]
 [ext_resource type="PackedScene" uid="uid://dlkd61icxxa2f" path="res://scenes/elements/islands/start_island/start_island.tscn" id="9_e7efq"]
 [ext_resource type="Texture2D" uid="uid://b5f85dm03mvhs" path="res://assets/gdb-keyboard-2.png" id="9_r01rg"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oet37"]
-bg_color = Color(0.152941, 0.152941, 0.152941, 0.796078)
+[ext_resource type="Texture2D" uid="uid://do3ij7exgac4r" path="res://assets/circle.png" id="10_il68v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kh2si"]
 atlas = ExtResource("9_r01rg")
@@ -63,7 +61,27 @@ position = Vector2(1536, 384)
 [node name="Player" parent="." index="2"]
 position = Vector2(64, 432)
 
-[node name="Education" type="CanvasLayer" parent="." index="5"]
+[node name="Hints" type="Node2D" parent="." index="5"]
+
+[node name="Select" type="PointLight2D" parent="Hints" index="0"]
+position = Vector2(64, 12)
+scale = Vector2(3.125, 0.283333)
+energy = 1.5
+range_z_min = -10
+range_z_max = 10
+texture = ExtResource("10_il68v")
+texture_scale = 0.6
+
+[node name="PointLight2D2" type="PointLight2D" parent="Hints" index="1"]
+position = Vector2(64, 840)
+scale = Vector2(0.8875, 0.411055)
+energy = 1.5
+range_z_min = -10
+range_z_max = 10
+texture = ExtResource("10_il68v")
+texture_scale = 0.6
+
+[node name="Education" type="CanvasLayer" parent="." index="6"]
 
 [node name="Control" type="Control" parent="Education" index="0"]
 layout_mode = 3
@@ -80,7 +98,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_oet37")
 
 [node name="MarginContainer" type="MarginContainer" parent="Education/Control/PanelContainer" index="0"]
 layout_mode = 2
@@ -89,8 +106,20 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 20
 
-[node name="Label" type="Label" parent="Education/Control/PanelContainer/MarginContainer" index="0"]
-visible = false
+[node name="Control" type="Control" parent="Education/Control/PanelContainer/MarginContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PointLight2D3" type="PointLight2D" parent="Education/Control/PanelContainer/MarginContainer/Control" index="0"]
+position = Vector2(0, 505)
+scale = Vector2(1.06875, 0.854167)
+energy = 1.5
+range_z_min = -10
+range_z_max = 10
+texture = ExtResource("10_il68v")
+texture_scale = 0.6
+
+[node name="Label" type="Label" parent="Education/Control/PanelContainer/MarginContainer" index="1"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -102,7 +131,7 @@ text = "Много лет назад, на Земле случилось вел�
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Education/Control/PanelContainer/MarginContainer" index="1"]
+[node name="Label2" type="Label" parent="Education/Control/PanelContainer/MarginContainer" index="2"]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -125,7 +154,82 @@ text = "Твоя задача помочь группе путников доб�
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Education/Control/PanelContainer/MarginContainer" index="2"]
+[node name="HungerBar" type="MarginContainer" parent="Education/Control/PanelContainer/MarginContainer" index="3"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+
+[node name="Label3" type="Label" parent="Education/Control/PanelContainer/MarginContainer/HungerBar" index="0"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_ixqxa")
+theme_override_font_sizes/font_size = 22
+text = "/\\ /\\ /\\
+Это шкала голода, со временем она убывает, чтобы восполнить её, вам необходима попасть на остров с припасами."
+horizontal_alignment = 1
+
+[node name="ToolsMenu" type="MarginContainer" parent="Education/Control/PanelContainer/MarginContainer" index="4"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 90
+
+[node name="Label4" type="Label" parent="Education/Control/PanelContainer/MarginContainer/ToolsMenu" index="0"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("7_ixqxa")
+theme_override_font_sizes/font_size = 22
+text = "Это панель инструментов, переключаться между ними ты сможешь с помщью курcора
+\\/ \\/ \\/"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="IslandHint" type="MarginContainer" parent="Education/Control/PanelContainer/MarginContainer" index="5"]
+layout_mode = 2
+theme_override_constants/margin_top = 280
+
+[node name="Label5" type="Label" parent="Education/Control/PanelContainer/MarginContainer/IslandHint" index="0"]
+custom_minimum_size = Vector2(1000, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_ixqxa")
+theme_override_font_sizes/font_size = 25
+text = "Ты попал на опасный остров! Его можно отличить по наличию надгробных камней. Когда ты наступаешь на подобный остров, колония получает штраф к голоду!
+\\/ \\/ \\/"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="Education/Control/PanelContainer/MarginContainer/IslandHint" index="1"]
+custom_minimum_size = Vector2(1000, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_ixqxa")
+theme_override_font_sizes/font_size = 25
+text = "Ты попал на остров с едой! Его можно отличить по наличию грибов и множественной растительности. Когда ты наступаешь на подобный остров, колония получает бонус к голоду!
+\\/ \\/ \\/"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label7" type="Label" parent="Education/Control/PanelContainer/MarginContainer/IslandHint" index="2"]
+custom_minimum_size = Vector2(1000, 0)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("7_ixqxa")
+theme_override_font_sizes/font_size = 25
+text = "Ты попал на остров с припасами! Его можно отличить по наличию камней и руд. Когда ты наступаешь на подобный остров, колония получает дополнительные плитки!
+\\/ \\/ \\/"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Education/Control/PanelContainer/MarginContainer" index="6"]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
@@ -145,4 +249,7 @@ sprite_frames = SubResource("SpriteFrames_xa5gg")
 autoplay = "default"
 speed_scale = 0.2
 
+[connection signal="body_entered" from="Islands/HealingIsland2" to="." method="_on_healing_island_2_body_entered"]
+[connection signal="body_entered" from="Islands/HostileIsland2" to="." method="_on_hostile_island_2_body_entered"]
+[connection signal="body_entered" from="Islands/ResourceIsland2" to="." method="_on_resource_island_2_body_entered"]
 [connection signal="gui_input" from="Education/Control" to="." method="_on_control_gui_input"]

@@ -34,7 +34,7 @@ project/assembly_name="Flood-s Edge- Island Exodus"
 
 [gui]
 
-theme/custom_font="res://assets/font/Sta.Toasty_font.ttf"
+theme/custom_font="res://assets/font/EpilepsySansBold.ttf"
 
 [input]
 

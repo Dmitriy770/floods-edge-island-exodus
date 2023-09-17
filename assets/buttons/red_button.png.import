@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd7oyr7ceftla"
-path="res://.godot/imported/StartPressed.png-27d8b9389a538f2d48105b8b0bad54fd.ctex"
+uid="uid://luu5jmacaisq"
+path="res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/StartPressed.png"
-dest_files=["res://.godot/imported/StartPressed.png-27d8b9389a538f2d48105b8b0bad54fd.ctex"]
+source_file="res://assets/buttons/red_button.png"
+dest_files=["res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
