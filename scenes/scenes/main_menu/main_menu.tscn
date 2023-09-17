@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bom7mm0201y1o"]
+[gd_scene load_steps=11 format=3 uid="uid://bom7mm0201y1o"]
 
 [ext_resource type="Script" path="res://scenes/scenes/main_menu/main_menu.gd" id="1_5yhfl"]
 [ext_resource type="Texture2D" uid="uid://ba488clp4hmej" path="res://assets/background.jpg" id="1_ya13e"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c7vjb513y3vn8" path="res://assets/buttons/green_button.png" id="4_pudvw"]
 [ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="5_6dwsd"]
 [ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="5_f0x3o"]
-[ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="6_vr8ea"]
 [ext_resource type="Texture2D" uid="uid://b54m4dyqc06pw" path="res://assets/buttons/red_button_hovered.png" id="7_7bm2x"]
 [ext_resource type="Texture2D" uid="uid://luu5jmacaisq" path="res://assets/buttons/red_button.png" id="7_64oww"]
 [ext_resource type="Texture2D" uid="uid://b4kfqb55jwd84" path="res://assets/buttons/button_disabled.png" id="7_6111u"]
@@ -108,7 +107,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 1
-theme_override_fonts/font = ExtResource("6_vr8ea")
 theme_override_font_sizes/font_size = 85
 text = "СТАРТ"
 horizontal_alignment = 1
@@ -136,7 +134,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 5
 theme_override_constants/shadow_outline_size = 1
-theme_override_fonts/font = ExtResource("6_vr8ea")
 theme_override_font_sizes/font_size = 60
 text = "ВЫХОД"
 horizontal_alignment = 1
