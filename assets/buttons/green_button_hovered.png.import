@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfoh0glkb4442"
-path="res://.godot/imported/Start.png-32059e95b8f435b776d2ab2896f429ad.ctex"
+uid="uid://wn11sano0h2f"
+path="res://.godot/imported/green_button_hovered.png-79531f536e1d0383745600a358f4f3ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Start.png"
-dest_files=["res://.godot/imported/Start.png-32059e95b8f435b776d2ab2896f429ad.ctex"]
+source_file="res://assets/buttons/green_button_hovered.png"
+dest_files=["res://.godot/imported/green_button_hovered.png-79531f536e1d0383745600a358f4f3ec.ctex"]
 
 [params]
 
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=1
-detect_3d/compress_to=0
+process/size_limit=0
+detect_3d/compress_to=1
