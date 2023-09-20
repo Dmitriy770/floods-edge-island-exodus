@@ -19,7 +19,7 @@ func _process(_delta: float) -> void:
 	
 	if path.is_empty() and state != State.IDLE:
 		state = State.IDLE
-		await target_island.player_enter()
+		await target_island.player_enter(self)
 		island_reached.emit(target_island);
 	
 	match state:
@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 
 func move_to_island(island: Island) -> void:
 	if target_island != null:
-		await target_island.player_exit()
+		await target_island.player_exit(self)
 	if can_move_to_island(island) and path.is_empty():
 		target_island = island
 		navigation_agent.target_position = island.target_position

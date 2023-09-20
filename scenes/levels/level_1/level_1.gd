@@ -1,12 +1,12 @@
 extends Level
 
 var counter := 0
-var education_pause := false
-var education_end := false
+var is_education_open := true
 
-var island_hostile_explored := false
-var island_resource_explored := false
-var island_healing_explored := false
+@onready var healing_island := $Islands/HealingIsland2 as Island
+@onready var hostile_island := $Islands/HostileIsland2 as Island
+@onready var resource_island := $Islands/ResourceIsland2 as Island
+
 
 @onready var label1 := $Education/Control/PanelContainer/MarginContainer/Label as Label
 @onready var label2 := $Education/Control/PanelContainer/MarginContainer/Label2 as Label
@@ -26,28 +26,20 @@ var island_healing_explored := false
 
 func _ready():
 	super._ready()
+	hide_education()
+	
+	is_game_on_pause = true
+	education.show()
 	label1.show()
-	label2.hide()
-	
-	# test
-	label3.hide()
-	hint3.hide()
-	
-	label4.hide()
-	hint4.hide()
-	
-	label5.hide()
-	label6.hide()
-	label7.hide()
-	hintIsland.hide()
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("action") and not education_pause and not education_end:
+	if event.is_action_pressed("action") and is_education_open:
 		counter +=1
 		
 		if counter == 1:
 			label1.hide()
+			
 			label2.show()
 			
 		elif counter == 2:
@@ -62,70 +54,50 @@ func _input(event: InputEvent) -> void:
 			
 			label4.show()
 			hint4.show()
-			
-		elif counter == 4:
-			label4.hide()
-			hint4.hide()
-			
-			education.hide()
-			education_pause = true
-		
-		elif counter == 5:
-			label5.hide()
-			hintIsland.hide()
-			
-			education.hide()
-			education_pause = true
-			
-		elif counter == 6:
-			label6.hide()
-			hintIsland.hide()
-			
-			education.hide()
-			education_pause = true
-			
-		elif counter == 7:
-			label7.hide()
-			hintIsland.hide()
-			
-			education.hide()
-			
-			education_end = true
-			education.queue_free()
-		
+		else:
+			is_education_open = false
+			hide_education()
 
 
-func _on_hostile_island_2_body_entered(_body):
-	await get_tree().create_timer(0.3).timeout
+func hide_education() -> void:
+	is_game_on_pause = false
 	
-	if not island_hostile_explored:
-		island_hostile_explored = true
-		education_pause = false
-		
-		education.show()
-		label5.show()
-		hintIsland.show()
-
-
-func _on_healing_island_2_body_entered(_body):
-	await get_tree().create_timer(0.3).timeout
+	education.hide()
+	label1.hide()
+	label2.hide()
 	
-	if not island_healing_explored:
-		island_healing_explored = true
-		education_pause = false
-		
-		education.show()
-		label6.show()
-		hintIsland.show()
-		
-
-func _on_resource_island_2_body_entered(_body):
-	await get_tree().create_timer(0.3).timeout
+	label3.hide()
+	hint3.hide()
 	
-	if not island_resource_explored:
-		island_resource_explored = true
-		education_pause = false
+	label4.hide()
+	hint4.hide()
+	
+	label5.hide()
+	label6.hide()
+	label7.hide()
+	hintIsland.hide()
+
+
+func on_island_reached(island: Island) -> void:
+	if island.is_first_visit:
+		match island:
+			healing_island:
+				education.show()
+				label6.show()
+				hintIsland.show()
+				is_education_open = true
+				is_game_on_pause = true
+			hostile_island:
+				education.show()
+				label5.show()
+				hintIsland.show()
+				is_education_open = true
+				is_game_on_pause = true
+			resource_island:
+				education.show()
+				label7.show()
+				hintIsland.show()
+				is_education_open = true
+				is_game_on_pause = true
 		
-		education.show()
-		label7.show()
-		hintIsland.show()
+	super.on_island_reached(island);

@@ -8,11 +8,12 @@ const MAX_FOOD_AMOUNT := 20.0
 @export var current_scene: SceneManager.Scenes
 @export var level_name := ""
 @export var tile_amount := 15
-		
+
 
 var tiles_spend := 0
 var food_amount := MAX_FOOD_AMOUNT
 var is_action_press := false
+var is_game_on_pause := false
 var active_tool := HUD.Tools.CURSOR
 
 @onready var tile_map := $TileMap as TileMap
@@ -28,9 +29,9 @@ func _ready() -> void:
 	hud.update_food_bar(food_amount)
 	
 	for island in islands_container.get_children() as Array[Island]:
+		island.mouse_entered.connect(func(): _on_island_mouse_entered(island))
+		island.mouse_exited.connect(func(): _on_island_mouse_exited(island))
 		island.island_clicked.connect(on_island_clicked)
-		# island.island_reached.connect(on_island_reached)
-		island.player = player
 		add_tiles_from_island(island)
 
 
@@ -105,20 +106,29 @@ func on_island_reached(island: Island) -> void:
 		end_game(true)
 
 
+func _on_island_mouse_entered(island: Island) -> void:
+	if active_tool == HUD.Tools.CURSOR and not is_game_on_pause:
+		if player.can_move_to_island(island):
+			island.tile_map.modulate = Color("ffffffff")
+		else:
+			island.tile_map.modulate = Color("ff0000ff")
+		island.tile_map.show()
+
+
+func _on_island_mouse_exited(island: Island) -> void:
+	if active_tool == HUD.Tools.CURSOR and not is_game_on_pause:
+		island.tile_map.hide()
+
+
 func _on_hud_tool_changed(tool: HUD.Tools) -> void:
 	active_tool = tool
-	match tool:
-		HUD.Tools.CURSOR:
-			for island in islands_container.get_children() as Array[Island]:
-				island.enable_click()
-		HUD.Tools.BLOCK:
-			for island in islands_container.get_children() as Array[Island]:
-				island.disable_click()
 
 
 func _on_food_timer_timeout():
-	update_food_amount(food_amount - FOOD_PER_SECOND)
+	if not is_game_on_pause:
+		update_food_amount(food_amount - FOOD_PER_SECOND)
 
 
 func end_game(is_win: bool) -> void:
+	is_game_on_pause = true
 	end_game_overlay.show_overlay(is_win, 0, tiles_spend, current_scene, level_name)

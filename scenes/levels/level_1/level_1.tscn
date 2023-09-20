@@ -248,8 +248,3 @@ position = Vector2(231, 13)
 sprite_frames = SubResource("SpriteFrames_xa5gg")
 autoplay = "default"
 speed_scale = 0.2
-
-[connection signal="body_entered" from="Islands/HealingIsland2" to="." method="_on_healing_island_2_body_entered"]
-[connection signal="body_entered" from="Islands/HostileIsland2" to="." method="_on_hostile_island_2_body_entered"]
-[connection signal="body_entered" from="Islands/ResourceIsland2" to="." method="_on_resource_island_2_body_entered"]
-[connection signal="gui_input" from="Education/Control" to="." method="_on_control_gui_input"]
