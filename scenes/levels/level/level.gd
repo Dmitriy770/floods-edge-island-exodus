@@ -29,7 +29,7 @@ func _ready() -> void:
 	
 	for island in islands_container.get_children() as Array[Island]:
 		island.island_clicked.connect(on_island_clicked)
-		island.island_reached.connect(on_island_reached)
+		# island.island_reached.connect(on_island_reached)
 		island.player = player
 		add_tiles_from_island(island)
 
@@ -97,8 +97,9 @@ func on_island_clicked(island: Island) -> void:
 
 
 func on_island_reached(island: Island) -> void:
-	update_tiles_amount(tile_amount + island.tile_amount)
-	update_food_amount(food_amount + island.food_amount)
+	if island.is_first_visit:
+		update_tiles_amount(tile_amount + island.tile_amount)
+		update_food_amount(food_amount + island.food_amount)
 	
 	if island == final_island:
 		end_game(true)

@@ -29,13 +29,13 @@ func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scen
 	time_label.text = str(transit_time)
 	tile_label.text = str(amount_spent_tiles)
 
-func save_level_data(name: String, is_win: bool, time: float, tiles: int) -> void:
-	var old_data := LevelsStorage.get_level_data(name)
+func save_level_data(level_name: String, is_win: bool, time: float, tiles: int) -> void:
+	var old_data := LevelsStorage.get_level_data(level_name)
 	
 	var data = LevelData.new()
 	data.state = old_data.state
 	if is_win:
-		data.name = name
+		data.name = level_name
 		data.state = LevelData.States.PASSED
 		data.amount_spent_tiles = min(old_data.amount_spent_tiles if old_data.amount_spent_tiles != 0 else tiles, tiles)
 		data.transit_time = min(old_data.transit_time, time)

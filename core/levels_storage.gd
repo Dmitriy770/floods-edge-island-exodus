@@ -5,8 +5,8 @@ const  SAVE_GAME_FILE := "user://savegame.save"
 func _ready() -> void:
 	set_default_data()
 
-func get_level_data(name: String) -> LevelData:
-	var data = load_level_data().get(name)
+func get_level_data(level_name: String) -> LevelData:
+	var data = load_level_data().get(level_name)
 	if data == null:
 		return LevelData.new()
 	

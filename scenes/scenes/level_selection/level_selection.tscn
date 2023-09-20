@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/scenes/level_selection/level_selection.gd" id="1_c0oc6"]
 [ext_resource type="TileSet" uid="uid://dbjcs7lsyh5t5" path="res://resources/base_tile_set.tres" id="1_ev10o"]
-[ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="4_ve6ut"]
+[ext_resource type="FontFile" uid="uid://c8uayek11eqjo" path="res://assets/font/EpilepsySansBold.ttf" id="4_ve6ut"]
 [ext_resource type="Texture2D" uid="uid://c7vjb513y3vn8" path="res://assets/buttons/green_button.png" id="5_6uyca"]
 [ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="6_1d8jl"]
 [ext_resource type="PackedScene" uid="uid://bp0brnrlk386m" path="res://scenes/scenes/level_selection/menu_items/menu_item_start/menu_item_start.tscn" id="6_30n2j"]

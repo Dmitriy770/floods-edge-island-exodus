@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cd5q3cn8y146s" path="res://scenes/elements/islands/healing_island/healing_island_2.tscn" id="4_43lca"]
 [ext_resource type="PackedScene" uid="uid://caa1uw70drs5w" path="res://scenes/elements/islands/resource_island/resource_island_2.tscn" id="5_cd771"]
 [ext_resource type="PackedScene" uid="uid://8bltitsy1nej" path="res://scenes/elements/islands/hostile_island/hostile_island_2.tscn" id="7_fw2t1"]
-[ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="7_ixqxa"]
+[ext_resource type="FontFile" uid="uid://c8uayek11eqjo" path="res://assets/font/EpilepsySansBold.ttf" id="7_ixqxa"]
 [ext_resource type="PackedScene" uid="uid://bbi5q4y5w6nap" path="res://scenes/elements/islands/finish_island/finish_island.tscn" id="8_04e67"]
 [ext_resource type="PackedScene" uid="uid://dlkd61icxxa2f" path="res://scenes/elements/islands/start_island/start_island.tscn" id="9_e7efq"]
 [ext_resource type="Texture2D" uid="uid://b5f85dm03mvhs" path="res://assets/gdb-keyboard-2.png" id="9_r01rg"]
