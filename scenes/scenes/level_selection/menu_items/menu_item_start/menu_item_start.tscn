@@ -5,9 +5,9 @@
 [sub_resource type="ButtonGroup" id="ButtonGroup_w1wji"]
 
 [node name="MenuItem" instance=ExtResource("1_y452a")]
-level_name = "level 1"
+label = "Уровень 1"
 description = "Небольшая группа разных островов, похоже преодолеть её будет достаточно просто..."
-level_scene_name = 2
+scene = 2
 
 [node name="TileMap" parent="." index="0"]
 position = Vector2(32, 0)

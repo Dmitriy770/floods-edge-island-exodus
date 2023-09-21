@@ -6,7 +6,6 @@ const MAX_FOOD_AMOUNT := 20.0
 
 @export var final_island: Island = null
 @export var current_scene: SceneManager.Scenes
-@export var level_name := ""
 @export var tile_amount := 15
 
 
@@ -131,4 +130,4 @@ func _on_food_timer_timeout():
 
 func end_game(is_win: bool) -> void:
 	is_game_on_pause = true
-	end_game_overlay.show_overlay(is_win, 0, tiles_spend, current_scene, level_name)
+	end_game_overlay.show_overlay(is_win, 0, tiles_spend, current_scene)

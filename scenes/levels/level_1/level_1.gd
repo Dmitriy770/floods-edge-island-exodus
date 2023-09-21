@@ -101,3 +101,7 @@ func on_island_reached(island: Island) -> void:
 				is_game_on_pause = true
 		
 	super.on_island_reached(island);
+
+func end_game(is_win: bool) -> void:
+	hide_education()
+	super.end_game(is_win)

@@ -13,11 +13,11 @@ var is_open := false
 func _ready():
 	hide()
 
-func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scene_name: SceneManager.Scenes, level_name: String) -> void:
+func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scene_name: SceneManager.Scenes) -> void:
 	if is_open:
 		return
 	is_open = true
-	save_level_data(level_name, result, transit_time, amount_spent_tiles)
+	save_level_data(str(scene_name), result, transit_time, amount_spent_tiles)
 	current_scene = scene_name
 	show()
 	animation_player.play("appearance_overlay")
