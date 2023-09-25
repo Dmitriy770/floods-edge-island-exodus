@@ -14,15 +14,18 @@ var food_amount := MAX_FOOD_AMOUNT
 var is_action_press := false
 var is_game_on_pause := false
 var active_tool := HUD.Tools.CURSOR
+var click_timout : SceneTreeTimer
 
 @onready var tile_map := $TileMap as TileMap
 @onready var islands_container := $Islands as Node
 @onready var player := $Player as Player
 @onready var hud := $Player/Camera2D/HUD as HUD
 @onready var end_game_overlay := $EndGameOverlay as EndGameOverlay
-
+@onready var draw_timer := $DrawTimer as Timer
 
 func _ready() -> void:
+	click_timout = get_tree().create_timer(0.1)
+	
 	hud.update_block_amount_label(tile_amount)
 	hud.set_max_food(MAX_FOOD_AMOUNT)
 	hud.update_food_bar(food_amount)
@@ -42,7 +45,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if is_action_press and active_tool == HUD.Tools.BLOCK:
+	if is_action_press and active_tool == HUD.Tools.BLOCK and draw_timer.is_stopped():
+		#draw_timer.start()
 		draw_ground()
 
 
@@ -60,19 +64,20 @@ func draw_ground() -> void:
 	
 	var tile_data := tile_map.get_cell_tile_data(layer, tile_pos)
 	
-	if (tile_data == null or tile_data.get_custom_data("is_can_build")) and tile_amount > 0:
-		tile_map.set_cells_terrain_connect(layer, coords, terrain_set, terrain, true)
-		tiles_spend += 1
+	if (tile_data == null or tile_data.get_custom_data("is_can_build")) and tile_amount >= 0:
+		if tile_amount > 0:
+			tile_map.set_cells_terrain_connect(layer, coords, terrain_set, terrain, true)
 		update_tiles_amount(tile_amount - 1)
 
 
 func update_tiles_amount(new_amount: int) -> void:
-	if new_amount < tile_amount:
-			tiles_spend += tile_amount - new_amount
-	tile_amount = new_amount
-	hud.update_block_amount_label(tile_amount)
-	if tile_amount <= 0:
+	if new_amount < 0:
 		end_game(false)
+	else:
+		if new_amount < tile_amount:
+			tiles_spend += tile_amount - new_amount
+		tile_amount = new_amount
+		hud.update_block_amount_label(tile_amount)
 
 
 func update_food_amount(new_amount: float) -> void:

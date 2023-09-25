@@ -37,7 +37,6 @@ animations = [{
 script = ExtResource("2_y6ut5")
 final_island = NodePath("Islands/FinishIsland")
 current_scene = 2
-level_name = "level 1"
 tile_amount = 30
 
 [node name="TileMap" parent="." index="0"]
@@ -60,6 +59,7 @@ position = Vector2(1536, 384)
 
 [node name="Player" parent="." index="2"]
 position = Vector2(64, 432)
+speed = 150.0
 
 [node name="Hints" type="Node2D" parent="." index="5"]
 
