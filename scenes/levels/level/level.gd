@@ -21,7 +21,6 @@ var click_timout : SceneTreeTimer
 @onready var player := $Player as Player
 @onready var hud := $Player/Camera2D/HUD as HUD
 @onready var end_game_overlay := $EndGameOverlay as EndGameOverlay
-@onready var draw_timer := $DrawTimer as Timer
 
 func _ready() -> void:
 	click_timout = get_tree().create_timer(0.1)
@@ -45,8 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if is_action_press and active_tool == HUD.Tools.BLOCK and draw_timer.is_stopped():
-		#draw_timer.start()
+	if is_action_press and active_tool == HUD.Tools.BLOCK:
 		draw_ground()
 
 
