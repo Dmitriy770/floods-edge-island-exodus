@@ -12,7 +12,6 @@ var tiles_spend := 0
 var food_amount := MAX_FOOD_AMOUNT
 var is_action_press := false
 var is_game_on_pause := false
-var active_tool := HUD.Tools.CURSOR
 var click_timout : SceneTreeTimer
 
 @onready var tile_map := $TileMap as TileMap
@@ -110,7 +109,7 @@ func on_island_reached(island: Island) -> void:
 
 
 func _on_island_mouse_entered(island: Island) -> void:
-	if active_tool == HUD.Tools.CURSOR and not is_game_on_pause:
+	if hud.active_tool == HUD.Tools.CURSOR and not is_game_on_pause:
 		if player.can_move_to_island(island):
 			island.tile_map.modulate = Color("ffffffff")
 		else:
@@ -119,12 +118,8 @@ func _on_island_mouse_entered(island: Island) -> void:
 
 
 func _on_island_mouse_exited(island: Island) -> void:
-	if active_tool == HUD.Tools.CURSOR and not is_game_on_pause:
+	if hud.active_tool == HUD.Tools.CURSOR and not is_game_on_pause:
 		island.tile_map.hide()
-
-
-func _on_hud_tool_changed(tool: HUD.Tools) -> void:
-	active_tool = tool
 
 
 func _on_food_timer_timeout():

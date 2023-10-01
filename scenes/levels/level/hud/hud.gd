@@ -1,8 +1,6 @@
 class_name HUD
 extends CanvasLayer
 
-signal tool_changed(tool: Tools)
-
 enum Tools {CURSOR, BLOCK}
 
 @onready var button_cursor := %Cursor as Button
@@ -17,7 +15,7 @@ var tile_map : TileMap
 func _ready() -> void:
 	block_projection.hide()
 	button_cursor.grab_focus()
-	
+
 	food_bar.value = 100
 
 
@@ -35,12 +33,10 @@ func _input(event) -> void:
 			active_tool = Tools.BLOCK
 			button_block.grab_focus()
 			block_projection.show()
-		
-		tool_changed.emit(active_tool)
 	
 
 
-func _process(delta):
+func _process(_delta):
 	if active_tool:
 		var mouse_cord := tile_map.to_local(get_viewport().get_mouse_position())
 		var coords_tile := tile_map.local_to_map(mouse_cord)
@@ -50,15 +46,11 @@ func _process(delta):
 func _on_cursor_toggled(_button_pressed: bool) -> void:
 	block_projection.hide()
 	active_tool = Tools.CURSOR
-	
-	tool_changed.emit(active_tool)
 
 
 func _on_block_toggled(_button_pressed: bool) -> void:
 	block_projection.show()
 	active_tool = Tools.BLOCK
-	
-	tool_changed.emit(active_tool)
 
 
 func update_food_bar(new_value: float) -> void:

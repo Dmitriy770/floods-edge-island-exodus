@@ -46,5 +46,4 @@ autostart = true
 [node name="EndGameOverlay" parent="." instance=ExtResource("5_n2kb0")]
 
 [connection signal="island_reached" from="Player" to="." method="on_island_reached"]
-[connection signal="tool_changed" from="Player/Camera2D/HUD" to="." method="_on_hud_tool_changed"]
 [connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]
