@@ -85,6 +85,7 @@ _data = {
 }
 
 [node name="HealingIsland2" instance=ExtResource("1_f2e3m")]
+tile_amount = 0
 landing_animation_name = "healing2_landing_animation/landing_animation"
 
 [node name="TileMap" parent="." index="0"]

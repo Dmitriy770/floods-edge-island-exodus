@@ -12,6 +12,7 @@
 
 [node name="Level 4" node_paths=PackedStringArray("final_island") instance=ExtResource("1_c03em")]
 final_island = NodePath("Islands/Continent")
+current_scene = 5
 level_name = "level 4"
 tile_amount = 40
 

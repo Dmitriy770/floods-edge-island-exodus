@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://bom7mm0201y1o"]
+[gd_scene load_steps=11 format=3 uid="uid://bom7mm0201y1o"]
 
 [ext_resource type="Script" path="res://scenes/scenes/main_menu/main_menu.gd" id="1_5yhfl"]
 [ext_resource type="Texture2D" uid="uid://ba488clp4hmej" path="res://assets/background.jpg" id="1_ya13e"]
 [ext_resource type="StyleBox" uid="uid://b4ca5ocs6ge0e" path="res://styles/main_menu.stylebox" id="2_f7fke"]
-[ext_resource type="Texture2D" uid="uid://dfoh0glkb4442" path="res://assets/Start.png" id="4_hooqb"]
-[ext_resource type="Texture2D" uid="uid://cd7oyr7ceftla" path="res://assets/StartPressed.png" id="5_heuip"]
-[ext_resource type="Texture2D" uid="uid://dd84c6t6ssbyx" path="res://assets/StartGray.png" id="6_4uuor"]
-[ext_resource type="Texture2D" uid="uid://c1cv4q1k6pgqk" path="res://assets/Exit.png" id="6_7537y"]
-[ext_resource type="Texture2D" uid="uid://dy276rgljpxcc" path="res://assets/ExitPressed.png" id="8_g2flx"]
-[ext_resource type="Texture2D" uid="uid://8j6gucpraby8" path="res://assets/ExitGray.png" id="9_8tdfe"]
+[ext_resource type="Texture2D" uid="uid://c7vjb513y3vn8" path="res://assets/buttons/green_button.png" id="4_pudvw"]
+[ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="5_6dwsd"]
+[ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="5_f0x3o"]
+[ext_resource type="Texture2D" uid="uid://b54m4dyqc06pw" path="res://assets/buttons/red_button_hovered.png" id="7_7bm2x"]
+[ext_resource type="Texture2D" uid="uid://luu5jmacaisq" path="res://assets/buttons/red_button.png" id="7_64oww"]
+[ext_resource type="Texture2D" uid="uid://b4kfqb55jwd84" path="res://assets/buttons/button_disabled.png" id="7_6111u"]
+[ext_resource type="Texture2D" uid="uid://dru2a4yueotj2" path="res://assets/buttons/red_button_pressed.png" id="8_3titi"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -85,22 +86,58 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StartButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
+custom_minimum_size = Vector2(375, 175)
 layout_mode = 2
-size_flags_vertical = 3
-texture_normal = ExtResource("4_hooqb")
-texture_pressed = ExtResource("5_heuip")
-texture_hover = ExtResource("6_4uuor")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_pudvw")
+texture_pressed = ExtResource("5_f0x3o")
+texture_hover = ExtResource("5_6dwsd")
+texture_disabled = ExtResource("7_6111u")
 stretch_mode = 5
 
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 85
+text = "СТАРТ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ExitButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 130)
+custom_minimum_size = Vector2(300, 140)
 layout_mode = 2
-size_flags_vertical = 3
-texture_normal = ExtResource("6_7537y")
-texture_pressed = ExtResource("8_g2flx")
-texture_hover = ExtResource("9_8tdfe")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_64oww")
+texture_pressed = ExtResource("8_3titi")
+texture_hover = ExtResource("7_7bm2x")
+texture_disabled = ExtResource("7_6111u")
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_font_sizes/font_size = 60
+text = "ВЫХОД"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

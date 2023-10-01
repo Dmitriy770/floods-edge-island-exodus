@@ -5,6 +5,7 @@
 [ext_resource type="AnimationLibrary" uid="uid://sybxij30q141" path="res://resources/animations/landing_animation/resource2_landing_animation.res" id="3_viyxy"]
 
 [node name="ResourceIsland2" instance=ExtResource("1_m4x62")]
+food_amount = 0
 landing_animation_name = "resource2_landing_animation/landing_animation"
 
 [node name="TileMap" parent="." index="0"]

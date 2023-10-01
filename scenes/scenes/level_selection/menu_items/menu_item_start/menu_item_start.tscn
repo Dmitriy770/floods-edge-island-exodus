@@ -1,14 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp0brnrlk386m"]
+[gd_scene load_steps=3 format=3 uid="uid://bp0brnrlk386m"]
 
 [ext_resource type="PackedScene" uid="uid://dsdggrqp83jxq" path="res://scenes/scenes/level_selection/menu_items/menu_item/menu_item.tscn" id="1_y452a"]
-[ext_resource type="PackedScene" uid="uid://bs7hiav6f0agu" path="res://scenes/levels/level_1/level_1.tscn" id="2_5r85p"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_w1wji"]
 
 [node name="MenuItem" instance=ExtResource("1_y452a")]
-level_name = "level 1"
+label = "Уровень 1"
 description = "Небольшая группа разных островов, похоже преодолеть её будет достаточно просто..."
-level_scene = ExtResource("2_5r85p")
+scene = 2
 
 [node name="TileMap" parent="." index="0"]
 position = Vector2(32, 0)

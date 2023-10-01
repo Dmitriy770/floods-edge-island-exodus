@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8j6gucpraby8"
-path="res://.godot/imported/ExitGray.png-241f1c4a8706712257c4555c59d7c1ea.ctex"
+uid="uid://b6bblxwyy7npk"
+path="res://.godot/imported/tile_projection.png-74c66c617a3744a6c28daacadcb7b943.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ExitGray.png"
-dest_files=["res://.godot/imported/ExitGray.png-241f1c4a8706712257c4555c59d7c1ea.ctex"]
+source_file="res://assets/tile_projection.png"
+dest_files=["res://.godot/imported/tile_projection.png-74c66c617a3744a6c28daacadcb7b943.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

@@ -28,7 +28,7 @@ func update_level_window() -> void:
 	var current_level := all_levels[current_level_ind]
 	var level_data := current_level.level_data
 	
-	header_label.text = current_level.level_name
+	header_label.text = current_level.label
 	description_label.text = current_level.description
 	status_label.text = get_string_state(level_data.state)
 	time_label.text = str(level_data.transit_time)
@@ -42,11 +42,11 @@ func update_level_window() -> void:
 func get_string_state(state: LevelData.States) -> String:
 	match state:
 		LevelData.States.OPEN:
-			return "Open"
+			return "Открыт"
 		LevelData.States.CLOSE:
-			return "Close"
+			return "Недоступен"
 		LevelData.States.PASSED:
-			return "Passed"
+			return "Пройден"
 	return ""
 
 func on_level_selected(index: int) -> void:
@@ -64,22 +64,21 @@ func _on_start_game_button_pressed() -> void:
 	all_levels[current_level_ind].start_game()
 
 
-func _on_exit_button_pressed():
-	var main_menu_scene := load("res://scenes/scenes/main_menu/main_menu.tscn")
-	SceneManager.change_scene(main_menu_scene)
+func _on_exit_button_pressed() -> void:
+	SceneManager.change_scene(SceneManager.Scenes.MAIN_MENU)
 
 
-func _on_reset_button_pressed():
+func _on_reset_button_pressed() -> void:
 	dialog_window.show()
 	dialog_window_animation.play('window_appear')
 
 
-func _on_exit_dialog_button_pressed():
+func _on_exit_dialog_button_pressed() -> void:
 	dialog_window_animation.play_backwards('window_appear')
 	await dialog_window_animation.animation_finished
 	dialog_window.hide()
 
-func _on_confirm_button_pressed():
+func _on_confirm_button_pressed() -> void:
 	LevelsStorage.reset_all_levels_data()
 	
 	for item in items_container.get_children() as Array[MenuItem]:
