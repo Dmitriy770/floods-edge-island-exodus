@@ -1,12 +1,13 @@
 extends Node
 
 const  SAVE_GAME_FILE := "user://savegame.save"
+const DEFAULT_LEVEL := SceneManager.Scenes.LEVEL_1
 
 func _ready() -> void:
 	set_default_data()
 
-func get_level_data(name: String) -> LevelData:
-	var data = load_level_data().get(name)
+func get_level_data(level_name: String) -> LevelData:
+	var data = load_level_data().get(level_name)
 	if data == null:
 		return LevelData.new()
 	
@@ -68,7 +69,7 @@ func set_default_data() -> void:
 	
 	if old_levels_data.is_empty():
 		var default_level := LevelData.new()
-		default_level.name = "level 1"
+		default_level.name = str(DEFAULT_LEVEL)
 		default_level.state = LevelData.States.OPEN
 		
 		save_level_data(default_level)

@@ -23,7 +23,8 @@ func change_scene(scene_name: Scenes) -> void:
 	await SceneAnimations.play_scene_exit()
 	get_tree().change_scene_to_packed(name_to_scene[scene_name])
 	await SceneAnimations.play_scene_enter()
-	
+
+
 func exit() -> void:
 	await SceneAnimations.play_scene_exit()
 	get_tree().quit()

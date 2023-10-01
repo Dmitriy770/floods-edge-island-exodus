@@ -32,6 +32,7 @@ layer_2/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("10_xj1cr")]
 position = Vector2(160, 528)
+speed = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.2, 1.2)
@@ -44,5 +45,6 @@ autostart = true
 
 [node name="EndGameOverlay" parent="." instance=ExtResource("5_n2kb0")]
 
+[connection signal="island_reached" from="Player" to="." method="on_island_reached"]
 [connection signal="tool_changed" from="Player/Camera2D/HUD" to="." method="_on_hud_tool_changed"]
 [connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]

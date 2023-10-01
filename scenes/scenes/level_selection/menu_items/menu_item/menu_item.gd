@@ -9,9 +9,9 @@ const SPRITES := {
 	LevelData.States.PASSED: preload("res://assets/level_passed_marker.png"),
 }
 
-@export var level_name := "Level"
-@export var description := "description"
-@export var level_scene_name : SceneManager.Scenes
+@export var label := ""
+@export var description := ""
+@export var scene : SceneManager.Scenes
 
 var level_data: LevelData = null
 var index := 0
@@ -20,7 +20,7 @@ var index := 0
 @onready var button := $Button as Button
 
 func _ready() -> void:
-	level_data = LevelsStorage.get_level_data(level_name)
+	level_data = LevelsStorage.get_level_data(str(scene))
 	change_state(level_data.state)
 
 func change_state(new_state: LevelData.States) -> void:
@@ -35,4 +35,4 @@ func grab_focus() -> void:
 	button.grab_focus()
 
 func start_game() -> void:
-	SceneManager.change_scene(level_scene_name)
+	SceneManager.change_scene(scene)

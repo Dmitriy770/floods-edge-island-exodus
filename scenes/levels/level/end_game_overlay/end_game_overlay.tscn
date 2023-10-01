@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://d2htntf36811b"]
 
 [ext_resource type="Script" path="res://scenes/levels/level/end_game_overlay/end_game_overlay.gd" id="1_u28go"]
-[ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="2_yfpaq"]
+[ext_resource type="FontFile" uid="uid://c8uayek11eqjo" path="res://assets/font/EpilepsySansBold.ttf" id="2_yfpaq"]
 [ext_resource type="Texture2D" uid="uid://c7vjb513y3vn8" path="res://assets/buttons/green_button.png" id="3_2glt0"]
 [ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="4_qiwel"]
 [ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="5_yvrgc"]
@@ -128,6 +128,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Control" type="Control" parent="MarginContainer"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/Control"]

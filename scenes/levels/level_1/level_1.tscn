@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cd5q3cn8y146s" path="res://scenes/elements/islands/healing_island/healing_island_2.tscn" id="4_43lca"]
 [ext_resource type="PackedScene" uid="uid://caa1uw70drs5w" path="res://scenes/elements/islands/resource_island/resource_island_2.tscn" id="5_cd771"]
 [ext_resource type="PackedScene" uid="uid://8bltitsy1nej" path="res://scenes/elements/islands/hostile_island/hostile_island_2.tscn" id="7_fw2t1"]
-[ext_resource type="FontFile" uid="uid://b022o8htiw7pd" path="res://assets/font/EpilepsySansBold.ttf" id="7_ixqxa"]
+[ext_resource type="FontFile" uid="uid://c8uayek11eqjo" path="res://assets/font/EpilepsySansBold.ttf" id="7_ixqxa"]
 [ext_resource type="PackedScene" uid="uid://bbi5q4y5w6nap" path="res://scenes/elements/islands/finish_island/finish_island.tscn" id="8_04e67"]
 [ext_resource type="PackedScene" uid="uid://dlkd61icxxa2f" path="res://scenes/elements/islands/start_island/start_island.tscn" id="9_e7efq"]
 [ext_resource type="Texture2D" uid="uid://b5f85dm03mvhs" path="res://assets/gdb-keyboard-2.png" id="9_r01rg"]
@@ -37,7 +37,6 @@ animations = [{
 script = ExtResource("2_y6ut5")
 final_island = NodePath("Islands/FinishIsland")
 current_scene = 2
-level_name = "level 1"
 tile_amount = 30
 
 [node name="TileMap" parent="." index="0"]
@@ -60,6 +59,7 @@ position = Vector2(1536, 384)
 
 [node name="Player" parent="." index="2"]
 position = Vector2(64, 432)
+speed = 150.0
 
 [node name="Hints" type="Node2D" parent="." index="5"]
 
@@ -248,8 +248,3 @@ position = Vector2(231, 13)
 sprite_frames = SubResource("SpriteFrames_xa5gg")
 autoplay = "default"
 speed_scale = 0.2
-
-[connection signal="body_entered" from="Islands/HealingIsland2" to="." method="_on_healing_island_2_body_entered"]
-[connection signal="body_entered" from="Islands/HostileIsland2" to="." method="_on_hostile_island_2_body_entered"]
-[connection signal="body_entered" from="Islands/ResourceIsland2" to="." method="_on_resource_island_2_body_entered"]
-[connection signal="gui_input" from="Education/Control" to="." method="_on_control_gui_input"]
