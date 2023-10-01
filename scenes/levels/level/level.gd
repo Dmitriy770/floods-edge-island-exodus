@@ -8,12 +8,10 @@ const MAX_FOOD_AMOUNT := 20.0
 @export var current_scene: SceneManager.Scenes
 @export var level_name := ""
 @export var tile_amount := 15
-		
 
 var tiles_spend := 0
 var food_amount := MAX_FOOD_AMOUNT
 var is_action_press := false
-var active_tool := HUD.Tools.CURSOR
 
 @onready var tile_map := $TileMap as TileMap
 @onready var islands_container := $Islands as Node
@@ -26,6 +24,7 @@ func _ready() -> void:
 	hud.update_block_amount_label(tile_amount)
 	hud.set_max_food(MAX_FOOD_AMOUNT)
 	hud.update_food_bar(food_amount)
+	hud.tile_map = tile_map
 	
 	for island in islands_container.get_children() as Array[Island]:
 		island.island_clicked.connect(on_island_clicked)
@@ -37,12 +36,13 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("action"):
 		is_action_press = true
+		
 	if event.is_action_released("action"):
 		is_action_press = false
 
 
 func _physics_process(_delta: float) -> void:
-	if is_action_press and active_tool == HUD.Tools.BLOCK:
+	if is_action_press and hud.active_tool == HUD.Tools.BLOCK:
 		draw_ground()
 
 
@@ -91,7 +91,7 @@ func add_tiles_from_island(island: Island) -> void:
 
 
 func on_island_clicked(island: Island) -> void:
-	if active_tool == HUD.Tools.CURSOR:
+	if hud.active_tool == hud.Tools.CURSOR:
 		if player.can_move_to_island(island):
 			player.move_to_island(island)
 
@@ -105,7 +105,6 @@ func on_island_reached(island: Island) -> void:
 
 
 func _on_hud_tool_changed(tool: HUD.Tools) -> void:
-	active_tool = tool
 	match tool:
 		HUD.Tools.CURSOR:
 			for island in islands_container.get_children() as Array[Island]:
