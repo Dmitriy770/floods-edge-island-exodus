@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/desert_.png.import
-uid="uid://bgmngr3eluamy"
-path="res://.godot/imported/desert_.png-51f742578ec895a37373b03293b3c892.ctex"
-========
-uid="uid://c7vjb513y3vn8"
+uid="uid://cp127krgtmrac"
 path="res://.godot/imported/green_button.png-cfb955361a511d0a018fcc63aa82d23e.ctex"
->>>>>>>> alpha:assets/buttons/green_button.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/desert_.png.import
-source_file="res://assets/desert_.png"
-dest_files=["res://.godot/imported/desert_.png-51f742578ec895a37373b03293b3c892.ctex"]
-========
 source_file="res://assets/buttons/green_button.png"
 dest_files=["res://.godot/imported/green_button.png-cfb955361a511d0a018fcc63aa82d23e.ctex"]
->>>>>>>> alpha:assets/buttons/green_button.png.import
 
 [params]
 

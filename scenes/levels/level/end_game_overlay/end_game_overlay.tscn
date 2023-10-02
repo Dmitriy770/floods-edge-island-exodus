@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scenes/levels/level/end_game_overlay/end_game_overlay.gd" id="1_u28go"]
 [ext_resource type="FontFile" uid="uid://c8uayek11eqjo" path="res://assets/font/EpilepsySansBold.ttf" id="2_yfpaq"]
-[ext_resource type="Texture2D" uid="uid://c7vjb513y3vn8" path="res://assets/buttons/green_button.png" id="3_2glt0"]
+[ext_resource type="Texture2D" uid="uid://cp127krgtmrac" path="res://assets/buttons/green_button.png" id="3_2glt0"]
 [ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="4_qiwel"]
 [ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="5_yvrgc"]
-[ext_resource type="Texture2D" uid="uid://luu5jmacaisq" path="res://assets/buttons/red_button.png" id="6_xy1ch"]
+[ext_resource type="Texture2D" uid="uid://bdlxohmbesxix" path="res://assets/buttons/red_button.png" id="6_xy1ch"]
 [ext_resource type="Texture2D" uid="uid://dru2a4yueotj2" path="res://assets/buttons/red_button_pressed.png" id="7_i8f73"]
 [ext_resource type="Texture2D" uid="uid://b54m4dyqc06pw" path="res://assets/buttons/red_button_hovered.png" id="8_dth0g"]
 

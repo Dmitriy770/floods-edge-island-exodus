@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:assets/food_.png.import
-uid="uid://cm7uhnce5f2s8"
-path="res://.godot/imported/food_.png-08cf0bee392f4537aeea3a5192be7458.ctex"
-========
-uid="uid://luu5jmacaisq"
+uid="uid://bdlxohmbesxix"
 path="res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"
->>>>>>>> alpha:assets/buttons/red_button.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:assets/food_.png.import
-source_file="res://assets/food_.png"
-dest_files=["res://.godot/imported/food_.png-08cf0bee392f4537aeea3a5192be7458.ctex"]
-========
 source_file="res://assets/buttons/red_button.png"
 dest_files=["res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"]
->>>>>>>> alpha:assets/buttons/red_button.png.import
 
 [params]
 
