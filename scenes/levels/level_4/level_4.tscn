@@ -125,3 +125,6 @@ position = Vector2(1920, 256)
 
 [node name="HealingIsland14" parent="Islands" index="35" instance=ExtResource("4_4628v")]
 position = Vector2(1664, 512)
+
+[node name="Player" parent="." index="2"]
+position = Vector2(162, 457)
