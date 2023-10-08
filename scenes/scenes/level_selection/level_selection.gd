@@ -31,7 +31,7 @@ func update_level_window() -> void:
 	header_label.text = current_level.label
 	description_label.text = current_level.description
 	status_label.text = get_string_state(level_data.state)
-	time_label.text = str(level_data.transit_time)
+	time_label.text = "N/A" if level_data.transit_time == 999 else time_to_str(level_data.transit_time)
 	tile_label.text = "N/A" if level_data.amount_spent_tiles == 0 else str(level_data.amount_spent_tiles)
 	
 	if level_data.state == LevelData.States.CLOSE:
@@ -89,3 +89,8 @@ func _on_confirm_button_pressed() -> void:
 	dialog_window_animation.play_backwards('window_appear')
 	await dialog_window_animation.animation_finished
 	dialog_window.hide()
+	
+func time_to_str(time: float) -> String:
+	var secs := fmod(time, 60)
+	var mins := fmod(time, 60*60) / 60
+	return "%02d:%02d" % [mins, secs]

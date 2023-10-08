@@ -9,6 +9,7 @@ const MAX_FOOD_AMOUNT := 20.0
 @export var tile_amount := 15
 
 var tiles_spend := 0
+var time_spend = 0
 var food_amount := MAX_FOOD_AMOUNT
 var is_action_press := false
 var is_game_on_pause := false
@@ -43,7 +44,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		is_action_press = false
 
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	time_spend += delta
+
 	if is_action_press and hud.active_tool == HUD.Tools.BLOCK:
 		draw_ground()
 
@@ -129,4 +132,4 @@ func _on_food_timer_timeout():
 
 func end_game(is_win: bool) -> void:
 	is_game_on_pause = true
-	end_game_overlay.show_overlay(is_win, 0, tiles_spend, current_scene)
+	end_game_overlay.show_overlay(is_win, round(time_spend), tiles_spend, current_scene)

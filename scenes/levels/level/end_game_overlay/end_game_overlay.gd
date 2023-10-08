@@ -26,10 +26,10 @@ func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scen
 	else:
 		header_label.text = "НЕУДАЧА"
 	
-	time_label.text = str(transit_time)
+	time_label.text = time_to_str(transit_time)
 	tile_label.text = str(amount_spent_tiles)
 
-func save_level_data(level_name: String, is_win: bool, time: float, tiles: int) -> void:
+func save_level_data(level_name: String, is_win: bool, time: int, tiles: int) -> void:
 	var old_data := LevelsStorage.get_level_data(level_name)
 	
 	var data = LevelData.new()
@@ -39,6 +39,7 @@ func save_level_data(level_name: String, is_win: bool, time: float, tiles: int) 
 		data.state = LevelData.States.PASSED
 		data.amount_spent_tiles = min(old_data.amount_spent_tiles if old_data.amount_spent_tiles != 0 else tiles, tiles)
 		data.transit_time = min(old_data.transit_time, time)
+		
 		LevelsStorage.save_level_data(data)
 
 
@@ -48,3 +49,9 @@ func _on_start_game_button_pressed():
 
 func _on_reset_game_button_pressed():
 	SceneManager.change_scene(current_scene)
+
+
+func time_to_str(time: float) -> String:
+	var secs := fmod(time, 60)
+	var mins := fmod(time, 60*60) / 60
+	return "%02d:%02d" % [mins, secs]
