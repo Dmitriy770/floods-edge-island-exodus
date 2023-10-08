@@ -18,8 +18,8 @@ func _process(_delta: float) -> void:
 		path.pop_front()
 	
 	if path.is_empty() and state != State.IDLE:
-		await target_island.player_enter(self)
 		state = State.IDLE
+		await target_island.player_enter(self)
 		island_reached.emit(target_island);
 	
 	match state:

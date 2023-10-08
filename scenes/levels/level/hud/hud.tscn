@@ -52,6 +52,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxLine_leipf")
 theme_override_styles/fill = SubResource("StyleBoxLine_jtghy")
+show_percentage = false
 
 [node name="Control" type="Control" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
