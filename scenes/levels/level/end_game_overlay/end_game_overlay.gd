@@ -13,7 +13,7 @@ var is_open := false
 func _ready():
 	hide()
 
-func show_overlay(result: bool, transit_time: float, amount_spent_tiles: int, scene_name: SceneManager.Scenes) -> void:
+func show_overlay(result: bool, transit_time: int, amount_spent_tiles: int, scene_name: SceneManager.Scenes) -> void:
 	if is_open:
 		return
 	is_open = true
@@ -29,7 +29,7 @@ func show_overlay(result: bool, transit_time: float, amount_spent_tiles: int, sc
 	time_label.text = time_to_str(transit_time)
 	tile_label.text = str(amount_spent_tiles)
 
-func save_level_data(level_name: String, is_win: bool, time: float, tiles: int) -> void:
+func save_level_data(level_name: String, is_win: bool, time: int, tiles: int) -> void:
 	var old_data := LevelsStorage.get_level_data(level_name)
 	
 	var data = LevelData.new()
