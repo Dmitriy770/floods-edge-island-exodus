@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdlxohmbesxix"
-path="res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"
+uid="uid://cdsqvk27iqs0v"
+path="res://.godot/imported/wasteland.png-b9dd4ec914480a600d85773dcf843973.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/red_button.png"
-dest_files=["res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"]
+source_file="res://assets/wasteland.png"
+dest_files=["res://.godot/imported/wasteland.png-b9dd4ec914480a600d85773dcf843973.ctex"]
 
 [params]
 

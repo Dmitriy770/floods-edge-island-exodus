@@ -32,7 +32,7 @@ func get_all_tiles() -> Array[TileInfo]:
 	var size := tile_map.get_used_rect()
 	for x in range(size.position.x, size.end.x):
 		for y in range(size.position.y, size.end.y):
-			for z in range(1, 3):
+			for z in range(1, 4):
 				var source_id = tile_map.get_cell_source_id(z, Vector2i(x,y))
 				if source_id != -1:
 					var atlas_coords = tile_map.get_cell_atlas_coords(z, Vector2i(x,y))
@@ -43,15 +43,16 @@ func get_all_tiles() -> Array[TileInfo]:
 
 
 func show_selection_effect() -> void:
-	tile_map.set_layer_modulate(3, Color("ffffff34"))
+	tile_map.set_layer_modulate(4, Color("ffffff34"))
 	await get_tree().create_timer(0.3).timeout
-	tile_map.set_layer_modulate(3, Color("ffffff14"))
+	tile_map.set_layer_modulate(4, Color("ffffff14"))
 
 
 func clear_tile_map() -> void:
 	tile_map.clear_layer(0)
 	tile_map.clear_layer(1)
 	tile_map.clear_layer(2)
+	tile_map.clear_layer(3)
 
 
 func player_enter(player: Player) -> void:

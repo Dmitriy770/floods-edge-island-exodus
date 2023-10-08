@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdlxohmbesxix"
-path="res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"
+uid="uid://c438rh5e6ii66"
+path="res://.godot/imported/desert_ [resources].png-9a1b960a82c2fad26be57b3494a37185.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/buttons/red_button.png"
-dest_files=["res://.godot/imported/red_button.png-eb5e686af01202cf33274ce65be7d099.ctex"]
+source_file="res://assets/desert_ [resources].png"
+dest_files=["res://.godot/imported/desert_ [resources].png-9a1b960a82c2fad26be57b3494a37185.ctex"]
 
 [params]
 

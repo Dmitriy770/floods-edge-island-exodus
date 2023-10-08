@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://scenes/scenes/main_menu/main_menu.gd" id="1_5yhfl"]
 [ext_resource type="Texture2D" uid="uid://ba488clp4hmej" path="res://assets/background.jpg" id="1_ya13e"]
 [ext_resource type="StyleBox" uid="uid://b4ca5ocs6ge0e" path="res://styles/main_menu.stylebox" id="2_f7fke"]
-[ext_resource type="Texture2D" uid="uid://c7vjb513y3vn8" path="res://assets/buttons/green_button.png" id="4_pudvw"]
+[ext_resource type="Texture2D" uid="uid://cp127krgtmrac" path="res://assets/buttons/green_button.png" id="4_pudvw"]
 [ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="5_6dwsd"]
 [ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="5_f0x3o"]
 [ext_resource type="Texture2D" uid="uid://b54m4dyqc06pw" path="res://assets/buttons/red_button_hovered.png" id="7_7bm2x"]
-[ext_resource type="Texture2D" uid="uid://luu5jmacaisq" path="res://assets/buttons/red_button.png" id="7_64oww"]
+[ext_resource type="Texture2D" uid="uid://bdlxohmbesxix" path="res://assets/buttons/red_button.png" id="7_64oww"]
 [ext_resource type="Texture2D" uid="uid://b4kfqb55jwd84" path="res://assets/buttons/button_disabled.png" id="7_6111u"]
 [ext_resource type="Texture2D" uid="uid://dru2a4yueotj2" path="res://assets/buttons/red_button_pressed.png" id="8_3titi"]
 
