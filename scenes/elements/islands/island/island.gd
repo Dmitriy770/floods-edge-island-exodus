@@ -3,6 +3,7 @@ extends Area2D
 
 signal island_reached(island: Island)
 signal island_clicked(island: Island)
+signal island_entered(island: Island)
 
 @export var tile_amount := 10
 @export var food_amount := 5
@@ -70,3 +71,8 @@ func player_exit(player: Player) -> void:
 		animation_container.hide()
 		player.show()
 		is_first_visit = false
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Player:
+		island_entered.emit(self)

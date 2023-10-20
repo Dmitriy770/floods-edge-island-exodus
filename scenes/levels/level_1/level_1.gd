@@ -27,6 +27,8 @@ var is_education_open := true
 func _ready():
 	super._ready()
 	hide_education()
+	for island in islands_container.get_children() as Array[Island]:
+		island.island_entered.connect(on_island_entered)
 	
 	is_game_on_pause = true
 	education.show()
@@ -78,7 +80,7 @@ func hide_education() -> void:
 	hintIsland.hide()
 
 
-func on_island_reached(island: Island) -> void:
+func on_island_entered(island: Island) -> void:
 	if island.is_first_visit:
 		match island:
 			healing_island:
@@ -99,8 +101,7 @@ func on_island_reached(island: Island) -> void:
 				hintIsland.show()
 				is_education_open = true
 				is_game_on_pause = true
-		
-	super.on_island_reached(island);
+
 
 func end_game(is_win: bool) -> void:
 	hide_education()
