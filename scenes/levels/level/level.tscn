@@ -20,13 +20,20 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
-layer_2/name = "decoration"
+layer_2/name = "ash"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
+layer_3/name = "decoration"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
 
 [node name="Islands" type="Node" parent="."]
 
@@ -44,5 +51,5 @@ autostart = true
 
 [node name="EndGameOverlay" parent="." instance=ExtResource("5_n2kb0")]
 
-[connection signal="tool_changed" from="Player/Camera2D/HUD" to="." method="_on_hud_tool_changed"]
+[connection signal="island_reached" from="Player" to="." method="on_island_reached"]
 [connection signal="timeout" from="FoodTimer" to="." method="_on_food_timer_timeout"]

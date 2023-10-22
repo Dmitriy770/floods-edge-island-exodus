@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv21dagw8l67i"]
+[gd_scene load_steps=9 format=3 uid="uid://dv21dagw8l67i"]
 
 [ext_resource type="Texture2D" uid="uid://cu1rnjixfrywe" path="res://assets/forest.png" id="1_fskfp"]
 [ext_resource type="Texture2D" uid="uid://dnhlapg867wmt" path="res://assets/cursor.png" id="1_ggcyl"]
 [ext_resource type="Script" path="res://scenes/levels/level/hud/hud.gd" id="1_s5ivw"]
 [ext_resource type="ButtonGroup" uid="uid://r4hkhpy1i1ud" path="res://scenes/levels/level/hud/hud_button_group.tres" id="2_dbh43"]
+[ext_resource type="Texture2D" uid="uid://b6bblxwyy7npk" path="res://assets/tile_projection.png" id="5_84njw"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_leipf"]
 thickness = 30
@@ -51,6 +52,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxLine_leipf")
 theme_override_styles/fill = SubResource("StyleBoxLine_jtghy")
+show_percentage = false
 
 [node name="Control" type="Control" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -89,6 +91,7 @@ texture = ExtResource("1_ggcyl")
 expand_mode = 1
 
 [node name="Block" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 toggle_mode = true
@@ -125,9 +128,16 @@ offset_right = 20.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 1
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("5_84njw")
 
 [connection signal="toggled" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Cursor" to="." method="_on_cursor_toggled"]
 [connection signal="toggled" from="Control/MarginContainer/VBoxContainer/HBoxContainer/Block" to="." method="_on_block_toggled"]

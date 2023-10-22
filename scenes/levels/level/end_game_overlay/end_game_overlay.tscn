@@ -1,12 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://d2htntf36811b"]
+[gd_scene load_steps=14 format=3 uid="uid://d2htntf36811b"]
 
 [ext_resource type="Script" path="res://scenes/levels/level/end_game_overlay/end_game_overlay.gd" id="1_u28go"]
-[ext_resource type="Texture2D" uid="uid://fu3fi0xhyuw5" path="res://assets/menu.png" id="2_mggc2"]
-[ext_resource type="Texture2D" uid="uid://bbh38jpixj5t8" path="res://assets/menu_pressed.png" id="3_6jhp2"]
-[ext_resource type="Texture2D" uid="uid://dhgtvbmrk05yf" path="res://assets/Rest.png" id="4_lrkpu"]
-[ext_resource type="Texture2D" uid="uid://dpbv7lvmpvoh5" path="res://assets/menu_gray.png" id="4_yg47t"]
-[ext_resource type="Texture2D" uid="uid://c2hkp5wku0x4q" path="res://assets/RestPressed.png" id="5_u32p7"]
-[ext_resource type="Texture2D" uid="uid://bdh8e2p3jlit2" path="res://assets/RestGray.png" id="6_n17f1"]
+[ext_resource type="FontFile" uid="uid://c8uayek11eqjo" path="res://assets/font/EpilepsySansBold.ttf" id="2_yfpaq"]
+[ext_resource type="Texture2D" uid="uid://cp127krgtmrac" path="res://assets/buttons/green_button.png" id="3_2glt0"]
+[ext_resource type="Texture2D" uid="uid://da2dr7q8jxfe2" path="res://assets/buttons/green_button_pressed.png" id="4_qiwel"]
+[ext_resource type="Texture2D" uid="uid://wn11sano0h2f" path="res://assets/buttons/green_button_hovered.png" id="5_yvrgc"]
+[ext_resource type="Texture2D" uid="uid://bdlxohmbesxix" path="res://assets/buttons/red_button.png" id="6_xy1ch"]
+[ext_resource type="Texture2D" uid="uid://dru2a4yueotj2" path="res://assets/buttons/red_button_pressed.png" id="7_i8f73"]
+[ext_resource type="Texture2D" uid="uid://b54m4dyqc06pw" path="res://assets/buttons/red_button_hovered.png" id="8_dth0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrdav"]
 bg_color = Color(0.152941, 0.152941, 0.152941, 0.576471)
@@ -158,11 +159,16 @@ theme_override_constants/separation = 30
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
 theme_override_font_sizes/font_size = 150
-text = "WIN"
+text = "ПОБЕДА"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 5)
+custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/separator = SubResource("StyleBoxLine_ndb8v")
@@ -173,20 +179,29 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Spent time:"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 35
+text = "Время попытки:"
 
 [node name="TimeLabel" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 40
 text = "0
 "
 
@@ -197,18 +212,28 @@ theme_override_constants/separation = 20
 
 [node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Tiles spent:"
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 35
+text = "Потрачено блоков:"
 
 [node name="TileLabel" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 40
 text = "0
 "
 
 [node name="HSeparator3" type="HSeparator" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 5)
+custom_minimum_size = Vector2(400, 5)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_styles/separator = SubResource("StyleBoxLine_ndb8v")
@@ -220,26 +245,59 @@ size_flags_stretch_ratio = 0.2
 theme_override_constants/separation = 35
 alignment = 1
 
+[node name="ResetGameButton" type="TextureButton" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("6_xy1ch")
+texture_pressed = ExtResource("7_i8f73")
+texture_hover = ExtResource("8_dth0g")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetGameButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 50
+text = "Рестарт"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="StartGameButton" type="TextureButton" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 size_flags_vertical = 8
-texture_normal = ExtResource("2_mggc2")
-texture_pressed = ExtResource("3_6jhp2")
-texture_hover = ExtResource("4_yg47t")
+texture_normal = ExtResource("3_2glt0")
+texture_pressed = ExtResource("4_qiwel")
+texture_hover = ExtResource("5_yvrgc")
 stretch_mode = 5
 
-[node name="ResetGameButton" type="TextureButton" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 120)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-texture_normal = ExtResource("4_lrkpu")
-texture_pressed = ExtResource("5_u32p7")
-texture_hover = ExtResource("6_n17f1")
-stretch_mode = 5
+[node name="Label" type="Label" parent="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("2_yfpaq")
+theme_override_font_sizes/font_size = 65
+text = "Меню"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "appearance_overlay"
@@ -247,5 +305,5 @@ libraries = {
 "": SubResource("AnimationLibrary_fooxd")
 }
 
-[connection signal="pressed" from="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetGameButton" to="." method="_on_reset_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Control/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
