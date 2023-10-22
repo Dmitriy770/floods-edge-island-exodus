@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dldg3kdar5cj8"]
+[gd_scene load_steps=5 format=3 uid="uid://dldg3kdar5cj8"]
 
 [ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/islands/island/island.tscn" id="1_th8iu"]
 [ext_resource type="Texture2D" uid="uid://b18oso8vfjxjo" path="res://assets/mPlayer_ [human].png" id="2_adcua"]
 [ext_resource type="AnimationLibrary" uid="uid://b25xsfcrj2bhk" path="res://resources/animations/landing_animation/resource1_landing_animation.res" id="3_qwbiy"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b4dbn"]
 
 [node name="ResourceIsland1" instance=ExtResource("1_th8iu")]
 food_amount = 0
@@ -19,24 +21,24 @@ polygon = PackedVector2Array(8, 72, 8, 56, -8, 56, -8, 24, -8, 8, 8, 8, 8, -8, 8
 
 [node name="Sprite2D" type="Sprite2D" parent="LandingAnimation" index="0"]
 y_sort_enabled = true
-position = Vector2(82, 115)
+position = Vector2(88, 84)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_adcua")
+region_enabled = true
+region_rect = Rect2(8, 40, 16, 24)
+
+[node name="Sprite2D2" type="Sprite2D" parent="LandingAnimation" index="1"]
+y_sort_enabled = true
+position = Vector2(53, 62)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_adcua")
 flip_h = true
 region_enabled = true
 region_rect = Rect2(8, 40, 16, 24)
 
-[node name="Sprite2D2" type="Sprite2D" parent="LandingAnimation" index="1"]
-y_sort_enabled = true
-position = Vector2(86, 123)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_adcua")
-region_enabled = true
-region_rect = Rect2(8, 40, 16, 24)
-
 [node name="Sprite2D3" type="Sprite2D" parent="LandingAnimation" index="2"]
 y_sort_enabled = true
-position = Vector2(92, 112)
+position = Vector2(77, 53)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_adcua")
 region_enabled = true
@@ -44,7 +46,7 @@ region_rect = Rect2(8, 40, 16, 24)
 
 [node name="Sprite2D4" type="Sprite2D" parent="LandingAnimation" index="3"]
 y_sort_enabled = true
-position = Vector2(96, 124)
+position = Vector2(60, 89)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_adcua")
 region_enabled = true
@@ -52,5 +54,6 @@ region_rect = Rect2(8, 40, 16, 24)
 
 [node name="AnimationPlayer" parent="LandingAnimation" index="4"]
 libraries = {
+"": SubResource("AnimationLibrary_b4dbn"),
 "resource1_landing_animation": ExtResource("3_qwbiy")
 }
