@@ -1,9 +1,22 @@
-# Floods Edge: island exodus
-<i>Стратегия с элементами выживания на Godot Engine</i>
-____
+<p align="center">
+      <img src="https://i.ibb.co/2KJk7MQ/floods-edge-island-exodus-player-logo-with-github.png" width="900">
+</p>
+
+<p align="center">
+   <img src="https://img.shields.io/badge/Engine-Godot_4.1.1-blue" alt="Unity Version">
+   <img src="https://img.shields.io/badge/Version-v1.1.0-blueviolet" alt="Game Version">
+</p>
+
+## About
 Floods Edge: island exodus — это увлекательная стратегия с элементами выживания. В которой группа путников пытается найти новый дом, после ужасного потопа. Им предстоит перебирать между островами, наполненными различными препятствиями и опасностями, но назад пути нет — новый дом уже ждёт...
 
-Авторы:
-[Dmitriy770](https://github.com/Dmitriy770)
-[MaxM1567](https://github.com/MaxM1567)
-[Dearsley](https://github.com/Dearsley)
+## Distribute
+
+- [Itch.io](https://stolevarov.itch.io/floods-edge-island-exodus)
+
+
+## Developers
+
+- [Dmitriy770](https://github.com/Dmitriy770)
+- [MaxM1567](https://github.com/MaxM1567)
+- [Dearsley](https://github.com/Dearsley)
