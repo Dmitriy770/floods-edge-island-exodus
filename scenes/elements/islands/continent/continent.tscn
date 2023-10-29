@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bonxjo04n02ra" path="res://scenes/elements/islands/island/island.tscn" id="1_jqc5n"]
 
 [node name="Continent" instance=ExtResource("1_jqc5n")]
+tile_amount = 250
+food_amount = 100
 
 [node name="TileMap" parent="." index="0"]
 position = Vector2(-16, -16)
