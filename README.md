@@ -7,6 +7,8 @@
    <img src="https://img.shields.io/badge/Version-v1.1.0-blueviolet" alt="Game Version">
 </p>
 
+<img src="https://i.ibb.co/3vyYTPw/floods-edge-island-exodus-player-screenshots.png">
+
 ## About
 Floods Edge: island exodus — это увлекательная стратегия с элементами выживания. В которой группа путников пытается найти новый дом, после ужасного потопа. Им предстоит перебирать между островами, наполненными различными препятствиями и опасностями, но назад пути нет — новый дом уже ждёт...
 
