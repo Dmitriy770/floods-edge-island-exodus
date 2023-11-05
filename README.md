@@ -9,15 +9,16 @@
 
 <img src="https://raw.githubusercontent.com/Dmitriy770/floods-edge-island-exodus/TASK-57_update_readme/readme_assets/gameplay_screenshots_readme.png" alt="floods-edge-island-exodus-player-screenshots" border="0">
 
-## About
+## О игре
+
 Увлекательная головоломка с элементами выживания. В которой вам предстоит руководить группой путников пытающихся найти новый дом, после ужасного потопа. Им предстоит перебирать между островами, наполненными различными препятствиями и опасностями, но назад пути нет — новый дом уже ждёт...
 
-## Distribute
+## Дистрибьюция
 
 - [Itch.io](https://stolevarov.itch.io/floods-edge-island-exodus)
 
 
-## Developers
+## Разработчики
 
 - [Dmitriy770](https://github.com/Dmitriy770)
 - [MaxM1567](https://github.com/MaxM1567)
