@@ -1,5 +1,5 @@
 <p align="center">
-      <img src="https://raw.githubusercontent.com/Dmitriy770/floods-edge-island-exodus/TASK-57_update_readme/readme_assets/header-logo.png" width="900" alt="Logo">
+      <img src="https://github.com/Dmitriy770/floods-edge-island-exodus/tree/main/readme_assets/header-logo.png" width="900" alt="Logo">
 </p>
 
 <p align="center">
@@ -7,7 +7,7 @@
    <img src="https://img.shields.io/badge/Version-v1.1.0-blueviolet" alt="Game Version">
 </p>
 
-<img src="https://raw.githubusercontent.com/Dmitriy770/floods-edge-island-exodus/TASK-57_update_readme/readme_assets/gameplay_screenshots_readme.png" alt="floods-edge-island-exodus-player-screenshots" border="0">
+<img src="https://github.com/Dmitriy770/floods-edge-island-exodus/tree/main/readme_assets/gameplay_screenshots_readme.png" alt="floods-edge-island-exodus-player-screenshots" border="0">
 
 ## О игре
 
