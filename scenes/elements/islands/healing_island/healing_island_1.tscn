@@ -19,16 +19,15 @@ polygon = PackedVector2Array(8, 56, 8, 24, 24, 24, 24, -8, 88, -8, 88, 8, 120, 8
 
 [node name="Sprite2D" type="Sprite2D" parent="LandingAnimation" index="0"]
 y_sort_enabled = true
-position = Vector2(94, 94)
+position = Vector2(77, 83)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_2ysqu")
-flip_h = true
 region_enabled = true
 region_rect = Rect2(8, 40, 16, 24)
 
 [node name="Sprite2D2" type="Sprite2D" parent="LandingAnimation" index="1"]
 y_sort_enabled = true
-position = Vector2(37, 85)
+position = Vector2(56, 75)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_2ysqu")
 flip_h = true
@@ -37,16 +36,15 @@ region_rect = Rect2(8, 40, 16, 24)
 
 [node name="Sprite2D3" type="Sprite2D" parent="LandingAnimation" index="2"]
 y_sort_enabled = true
-position = Vector2(100, 51)
+position = Vector2(60, 57)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_2ysqu")
-flip_h = true
 region_enabled = true
 region_rect = Rect2(8, 40, 16, 24)
 
 [node name="Sprite2D4" type="Sprite2D" parent="LandingAnimation" index="3"]
 y_sort_enabled = true
-position = Vector2(142, 106)
+position = Vector2(86, 64)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_2ysqu")
 region_enabled = true
