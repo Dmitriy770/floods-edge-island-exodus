@@ -1,12 +1,12 @@
 class_name Level
 extends Node2D
 
-const FOOD_PER_SECOND := 0.1
-const MAX_FOOD_AMOUNT := 20.0
+const FOOD_PER_SECOND := 0.5
+const MAX_FOOD_AMOUNT := 100.0
 
 @export var final_island: Island = null
 @export var current_scene: SceneManager.Scenes
-@export var tile_amount := 15
+@export var tile_amount := 10
 
 var tiles_spend := 0
 var time_spend = 0

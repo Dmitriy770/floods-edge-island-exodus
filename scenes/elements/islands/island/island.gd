@@ -5,8 +5,8 @@ signal island_reached(island: Island)
 signal island_clicked(island: Island)
 signal island_entered(island: Island)
 
-@export var tile_amount := 10
-@export var food_amount := 5
+@export var tile_amount := 12
+@export var food_amount := 33
 @export var landing_animation_name := ""
 
 var is_first_visit := true
