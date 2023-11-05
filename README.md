@@ -1,13 +1,11 @@
-<p align="center">
-      <img src="https://github.com/Dmitriy770/floods-edge-island-exodus/tree/main/readme_assets/header-logo.png" width="900" alt="Logo">
-</p>
+![image](/readme_assets/header-logo.png)
 
 <p align="center">
    <img src="https://img.shields.io/badge/Engine-Godot_4.1.1-blue" alt="Unity Version">
    <img src="https://img.shields.io/badge/Version-v1.1.0-blueviolet" alt="Game Version">
 </p>
 
-<img src="https://github.com/Dmitriy770/floods-edge-island-exodus/tree/main/readme_assets/gameplay_screenshots_readme.png" alt="floods-edge-island-exodus-player-screenshots" border="0">
+![image](/readme_assets/gameplay_screenshots_readme.png)
 
 ## О игре
 
