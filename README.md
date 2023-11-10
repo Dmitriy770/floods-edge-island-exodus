@@ -1,8 +1,7 @@
 ![image](/readme_assets/header-logo.png)
 
 <p align="center">
-   <img src="https://img.shields.io/badge/Engine-Godot_4.1.1-blue" alt="Unity Version">
-   <img src="https://img.shields.io/badge/Version-v1.1.0-blueviolet" alt="Game Version">
+   <img src="https://img.shields.io/badge/Engine-Godot_4.1.1-blue" alt="Godot Version">
 </p>
 
 ![image](/readme_assets/gameplay_screenshots_readme.png)
